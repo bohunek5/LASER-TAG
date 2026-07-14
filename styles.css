@@ -4,8 +4,8 @@
   --color-base: #0D0D0D;
   --color-surface: #262626;
   --color-surface-light: #353434;
-  --color-accent-primary: #FF5722;
-  --color-accent-secondary: #D32F2F;
+  --color-accent-primary: #00ffcc;
+  --color-accent-secondary: #65ff4f;
   --color-text-primary: #e5e2e1;
   --color-text-muted: #888888;
   
@@ -40,9 +40,13 @@ body {
 }
 
 .logo img {
-  height: 60px;
+  width: 42px;
+  height: 42px;
+  max-width: 42px;
+  max-height: 42px;
+  object-fit: cover;
   border: 2px solid var(--color-accent-primary);
-  margin: 0 20px;
+  margin: 0 14px;
   /* Tactical sharp look */
   border-radius: 0;
   clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
@@ -51,7 +55,7 @@ body {
 .line {
   height: 2px;
   background: var(--color-accent-primary);
-  box-shadow: 0 0 8px rgba(255, 87, 34, 0.4);
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.55);
   flex-grow: 1;
   max-width: 300px;
   position: relative;
@@ -103,7 +107,7 @@ body {
   
   .desktop-menu a:hover, .desktop-menu a.active {
     border-color: var(--color-accent-primary);
-    background: rgba(255, 87, 34, 0.1);
+    background: rgba(0, 255, 204, 0.1);
     color: var(--color-accent-primary);
   }
 }
