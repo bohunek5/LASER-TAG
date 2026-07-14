@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Imprezy - Laser Tag Giżycko</title>
+  <title>Imprezy - Laser Tag Giżycko Tactical Arena</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="imprezy">
 
+  <!-- Glow Backgrounds -->
+  <div class="grid-glow"></div>
+  <div class="grid-glow-alt"></div>
+
+  <!-- Top Nav -->
   <nav class="top-nav">
     <div class="line left-line"></div>
     <div class="logo">
@@ -16,6 +21,7 @@
     <div class="line right-line"></div>
   </nav>
 
+  <!-- Desktop menu -->
   <div class="desktop-menu">
     <a href="index.html">Start</a>
     <a href="oferta.html">Oferta</a>
@@ -25,32 +31,112 @@
     <a href="kontakt.html">Kontakt</a>
   </div>
 
-  <main>
+  <main style="padding-top: 90px;">
+    
+    <!-- Hero Section -->
     <section class="hero">
       <div class="video-overlay"></div>
       <video autoplay muted loop playsinline class="bg-video">
         <source src="assets/media/group-of-happy-teenagers-with-laser-guns-having-fu-2025-12-17-12-41-37-utc.mp4" type="video/mp4">
       </video>
-      <div class="hero-content tactical-panel">
-        <h1>IMPREZY GRUPOWE</h1>
-        <p>MANEWRY URODZINOWE I INTEGRACJE</p>
+      <div class="hud-panel">
+        <div class="hud-metadata">EVENTS // BRIEFING_ROOM // RESERVATIONS</div>
+        <h1 class="hud-title">MISJE <span>ZORGANIZOWANE</span></h1>
+        <p class="hud-desc">
+          Zaplanuj urodziny, integrację firmową lub wieczór kawalerski na naszej arenie. Zapewniamy pełne wsparcie instruktorów i zaplecze cateringowe.
+        </p>
+        <div class="btn-hud-container">
+          <a href="#event-types" class="btn-hud btn-hud-orange">Rodzaje imprez</a>
+          <a href="#packages" class="btn-hud btn-hud-cyan">Pakiety urodzinowe</a>
+        </div>
       </div>
     </section>
 
-    <section class="features">
-      <div class="feature-card">
-        <img src="assets/media/LT1.jpg" alt="Imprezy Urodzinowe">
-        <h2>Urodziny Rekruta</h2>
-        <p>Zorganizuj niezapomniane urodziny dla swojego dziecka na arenie pełnej przeszkód i wyzwań.</p>
+    <!-- Event Types Selector -->
+    <section class="content-section" id="event-types">
+      <div class="section-header">
+        <span class="section-tag">DODATKOWE PROFILE OPERACJI</span>
+        <h2 class="section-title">RODZAJE <span>IMPREZ</span></h2>
+        <div class="section-divider"></div>
       </div>
-      <div class="feature-card">
-        <img src="assets/media/LT6.jpg" alt="Integracja">
-        <h2>Operacje Firmowe</h2>
-        <p>Zbuduj zespół przez wspólną rywalizację i zaawansowaną zabawę taktyczną.</p>
+
+      <!-- Tab selectors -->
+      <div style="display:flex; justify-content:center; gap:10px; margin-bottom: 40px; flex-wrap:wrap;">
+        <button class="class-btn active" onclick="selectEvent('birthdays', this)">🎂 Urodziny Rekruta</button>
+        <button class="class-btn" onclick="selectEvent('corporate', this)">💼 Integracje Firmowe</button>
+        <button class="class-btn" onclick="selectEvent('bachelor', this)">🎖️ Kawalerskie / Panieńskie</button>
+      </div>
+
+      <!-- Tab Content Area -->
+      <div class="customizer-box" style="grid-template-columns: 1fr;">
+        <div id="event-details">
+          <h3 class="card-title" id="event-title" style="color:var(--accent-primary);">Urodziny Rekruta</h3>
+          <p class="card-desc" id="event-desc" style="margin-top: 15px; line-height: 1.8;">
+            Zorganizuj najbardziej dynamiczne urodziny dla swojego dziecka na Mazurach! Oferujemy bezpieczną, bezbolesną rozgrywkę laserową, która uczy strategicznego myślenia i współpracy w grupie. Dzieci bawią się pod stałą opieką doświadczonego instruktora, który koordynuje scenariusze i dba o zasady gry. 
+            <br><br>
+            W cenie każdego pakietu znajduje się dostęp do dedykowanej sali urodzinowej, wojskowy briefing oraz pamiątkowe dyplomy dla każdego rekruta.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Packages Table -->
+    <section class="content-section" id="packages" style="border-top: 1px solid var(--border-color); background: rgba(19, 22, 37, 0.4);">
+      <div class="section-header">
+        <span class="section-tag">KONFIGURACJA PAKIETÓW</span>
+        <h2 class="section-title">PAKIETY <span>URODZINOWE</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="hud-grid">
+        <!-- Package 1 -->
+        <div class="hud-card">
+          <div class="card-num">PK_01 // BASIC</div>
+          <h3 class="card-title">PAKIET KADET</h3>
+          <span style="font-family: var(--font-hud); font-size: 1.5rem; color: var(--accent-primary); display:block; margin: 10px 0;">550 PLN</span>
+          <p class="card-desc" style="margin-bottom: 20px;">Dla grup do 10 osób. Podstawowe manewry taktyczne.</p>
+          <ul style="list-style-type: none; font-family: var(--font-hud); font-size: 0.8rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+            <li>🔸 2 rozgrywki po 20 minut</li>
+            <li>🔸 Prywatna sala urodzinowa na 2h</li>
+            <li>🔸 Opieka instruktora taktycznego</li>
+            <li>🔸 Pamiątkowe dyplomy rekruta</li>
+          </ul>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="hud-card" style="border-color: var(--accent-secondary);">
+          <div class="card-num">PK_02 // MEDIUM</div>
+          <h3 class="card-title">PAKIET KOMANDOS</h3>
+          <span style="font-family: var(--font-hud); font-size: 1.5rem; color: var(--accent-secondary); display:block; margin: 10px 0;">750 PLN</span>
+          <p class="card-desc" style="margin-bottom: 20px;">Dla grup do 10 osób. Rozbudowane wyposażenie i pamiątki.</p>
+          <ul style="list-style-type: none; font-family: var(--font-hud); font-size: 0.8rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+            <li>🔸 3 rozgrywki po 20 minut</li>
+            <li>🔸 Prywatna sala urodzinowa na 2.5h</li>
+            <li>🔸 Pamiątkowy medal dla Jubilata</li>
+            <li>🔸 Zaproszenia urodzinowe dla gości</li>
+            <li>🔸 Bezalkoholowy szampan dla drużyny</li>
+          </ul>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="hud-card" style="border-color: var(--accent-primary);">
+          <div class="card-num">PK_03 // VIP</div>
+          <h3 class="card-title">PAKIET WETERAN</h3>
+          <span style="font-family: var(--font-hud); font-size: 1.5rem; color: var(--accent-primary); display:block; margin: 10px 0;">1050 PLN</span>
+          <p class="card-desc" style="margin-bottom: 20px;">Dla grup do 12 osób. Maksymalna dawka realizmu z cateringiem.</p>
+          <ul style="list-style-type: none; font-family: var(--font-hud); font-size: 0.8rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+            <li>🔸 Nielimitowane gry przez 2 godziny</li>
+            <li>🔸 Prywatna sala urodzinowa na 3h</li>
+            <li>🔸 Catering (Pizza + przekąski i napoje)</li>
+            <li>🔸 Medale dla wszystkich uczestników</li>
+            <li>🔸 Pamiątkowa fotorelacja z areny</li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Mobile bottom nav -->
   <nav class="bottom-nav">
     <a href="index.html">
       <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -69,6 +155,40 @@
       <span>Kontakt</span>
     </a>
   </nav>
+
+  <!-- Interactive JavaScript for Event Tabs -->
+  <script>
+    const events = {
+      birthdays: {
+        title: 'Urodziny Rekruta',
+        desc: 'Zorganizuj najbardziej dynamiczne urodziny dla swojego dziecka na Mazurach! Oferujemy bezpieczną, bezbolesną rozgrywkę laserową, która uczy strategicznego myślenia i współpracy w grupie. Dzieci bawią się pod stałą opieką doświadczonego instruktora, który koordynuje scenariusze i dba o zasady gry. <br><br> W cenie każdego pakietu znajduje się dostęp do dedykowanej sali urodzinowej, wojskowy briefing oraz pamiątkowe dyplomy dla każdego rekruta.'
+      },
+      corporate: {
+        title: 'Integracje Firmowe',
+        desc: 'Szukasz sposobu na zgranie zespołu lub podsumowanie udanego kwartału? Laser tag to idealny teambuilding. Przygotowujemy spersonalizowane turnieje taktyczne, które zmuszają do podziału ról, planowania i błyskawicznej komunikacji pod presją czasu. <br><br> Oferujemy pełną wyłączność na obiekt, profesjonalny system rankingowy z wydrukiem statystyk dla każdego pracownika oraz możliwość organizacji pełnego cateringu z gorącymi posiłkami i zimnymi napojami.'
+      },
+      bachelor: {
+        title: 'Wieczory Kawalerskie i Panieńskie',
+        desc: 'Ostatnie chwile wolności w militarnym stylu! Przeprowadzamy specjalne misje typu "Polowanie na VIP-a", gdzie przyszły Pan Młody lub Panna Młoda staje się głównym celem taktycznym nieprzyjaciela. <br><br> Gwarantujemy potężną dawkę adrenaliny, nielimitowany dostęp do areny, gęsty dym i muzykę bitewną dostosowaną do Waszych upodobań. Po walce możecie kontynuować integrację w naszej sali odpraw.'
+      }
+    };
+
+    function selectEvent(key, btnElement) {
+      document.querySelectorAll('.class-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      btnElement.classList.add('active');
+      
+      const selected = events[key];
+      document.getElementById('event-title').innerHTML = selected.title;
+      document.getElementById('event-desc').innerHTML = selected.desc;
+    }
+  </script>
+
+  <footer>
+    <p>&copy; 2026 LASER TAG TACTICAL ARENA GIŻYCKO. BASE_COMMAND // ALL RIGHTS RESERVED.</p>
+  </footer>
 
 </body>
 </html>

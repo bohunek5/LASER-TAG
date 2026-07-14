@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Galeria - Laser Tag Giżycko</title>
+  <title>Galeria - Laser Tag Giżycko Tactical Arena</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="galeria">
 
+  <!-- Glow Backgrounds -->
+  <div class="grid-glow"></div>
+  <div class="grid-glow-alt"></div>
+
+  <!-- Top Nav -->
   <nav class="top-nav">
     <div class="line left-line"></div>
     <div class="logo">
@@ -16,6 +21,7 @@
     <div class="line right-line"></div>
   </nav>
 
+  <!-- Desktop menu -->
   <div class="desktop-menu">
     <a href="index.html">Start</a>
     <a href="oferta.html">Oferta</a>
@@ -25,34 +31,157 @@
     <a href="kontakt.html">Kontakt</a>
   </div>
 
-  <main>
+  <main style="padding-top: 90px;">
+    
+    <!-- Hero Section -->
     <section class="hero">
       <div class="video-overlay"></div>
       <video autoplay muted loop playsinline class="bg-video">
         <source src="assets/media/helmeted-player-in-dark-laser-tag-arena-2025-12-17-16-18-20-utc.mov" type="video/mp4">
       </video>
-      <div class="hero-content tactical-panel">
-        <h1>GALERIA</h1>
-        <p>REJESTR Z BOLA WALKI</p>
+      <div class="hud-panel">
+        <div class="hud-metadata">DATABASE // MEDIA_FILES // LOGS</div>
+        <h1 class="hud-title">MULTIMEDIALNA <span>GALERIA</span></h1>
+        <p class="hud-desc">
+          Zapis z kamer operacyjnych oraz fotorelacje z rozgrywek. Kliknij na zdjęcie, aby otworzyć podgląd taktyczny.
+        </p>
+        <div class="btn-hud-container">
+          <a href="#photo-grid-sec" class="btn-hud btn-hud-orange">Galeria zdjęć</a>
+          <a href="#video-logs" class="btn-hud btn-hud-cyan">Zapisy wideo</a>
+        </div>
       </div>
     </section>
 
-    <section class="features">
-      <div class="feature-card">
-        <img src="assets/media/PLAKAT%20LT.jpg" alt="Plakat Laser Tag" style="object-fit: contain; background: #000;">
-        <h2>Kampanie całoroczne</h2>
+    <!-- Camps and Groups Offer (Transcribed from poster) -->
+    <section class="content-section" style="background: rgba(19, 22, 37, 0.4); border-bottom: 1px solid var(--border-color);">
+      <div class="section-header">
+        <span class="section-tag">OFERTA SPECJALNA</span>
+        <h2 class="section-title">DLA OBOZÓW <span>I KOLONII</span></h2>
+        <div class="section-divider"></div>
       </div>
-      <div class="feature-card">
-        <img src="assets/media/LT4.jpg" alt="Laser Tag Sprzęt">
-        <h2>Wyposażenie</h2>
+
+      <div class="customizer-box" style="grid-template-columns: 1fr;">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+          <h3 class="card-title" style="color: var(--accent-primary); font-size: 1.6rem; margin-bottom: 15px;">NIEZAPOMNIANA PRZYGODA DLA KAŻDEGO!</h3>
+          <p class="card-desc" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+            Zapraszamy grupy zorganizowane, kolonie, obozy i zielone szkoły do wspólnej zabawy. Wiek uczestników od 7 lat — bez górnej granicy! Nasze gry to doskonała integracja, zdrowa rywalizacja i nauka dynamicznej współpracy w zespole.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: left; margin-bottom: 30px;">
+            <div style="background: rgba(255,255,255,0.02); padding: 15px; border-left: 3px solid var(--accent-secondary);">
+              <h4 style="font-family: var(--font-hud); color:#fff; font-size:0.9rem; margin-bottom:5px;">PRZYJEDZIEMY DO WAS</h4>
+              <p class="card-desc" style="font-size:0.85rem;">Dojedziemy z całym sprzętem i przeszkodami taktycznymi w wybrane przez Was miejsce.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 15px; border-left: 3px solid var(--accent-primary);">
+              <h4 style="font-family: var(--font-hud); color:#fff; font-size:0.9rem; margin-bottom:5px;">ZAPRASZAMY DO NAS</h4>
+              <p class="card-desc" style="font-size:0.85rem;">Czeka na Was nasza w pełni wyposażona, bezpieczna arena o powierzchni 2000m².</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 15px; border-left: 3px solid var(--accent-success);">
+              <h4 style="font-family: var(--font-hud); color:#fff; font-size:0.9rem; margin-bottom:5px;">BEZPIECZEŃSTWO</h4>
+              <p class="card-desc" style="font-size:0.85rem;">Zabawa pod okiem doświadczonej kadry i instruktorów z zachowaniem wszelkich norm.</p>
+            </div>
+          </div>
+          <a href="kontakt.html" class="btn-hud btn-hud-orange" style="text-decoration:none; display:inline-block;">Zarezerwuj termin grupy</a>
+        </div>
       </div>
-      <div class="feature-card">
-        <img src="assets/media/LT7.jpg" alt="Laser Tag Walka">
-        <h2>Rywalizacja</h2>
+    </section>
+
+    <!-- Structured Photo Gallery Grid -->
+    <section class="content-section" id="photo-grid-sec">
+      <div class="section-header">
+        <span class="section-tag">ZAPISY FOTOGRAFICZNE</span>
+        <h2 class="section-title">RELACJE <span>Z POLA WALKI</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="hud-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;">
+        <!-- Card 1 -->
+        <div class="hud-card" style="cursor: pointer; padding: 15px;" onclick="openLightbox('assets/media/LT1.jpg', 'SZKOLENIE TAKTYCZNE REKRUTÓW')">
+          <div class="card-num">IMG_LT // 01</div>
+          <div class="card-img-holder" style="height: 180px;">
+            <img src="assets/media/LT1.jpg" alt="Gracze przed walką">
+          </div>
+          <h4 style="font-family: var(--font-hud); font-size: 0.95rem; color: #fff; text-transform: uppercase; text-align: center;">Briefing taktyczny</h4>
+        </div>
+        <!-- Card 2 -->
+        <div class="hud-card" style="cursor: pointer; padding: 15px;" onclick="openLightbox('assets/media/LT2.jpg', 'STARCIE W STREFIE UV')">
+          <div class="card-num">IMG_LT // 02</div>
+          <div class="card-img-holder" style="height: 180px;">
+            <img src="assets/media/LT2.jpg" alt="Celowanie w UV">
+          </div>
+          <h4 style="font-family: var(--font-hud); font-size: 0.95rem; color: #fff; text-transform: uppercase; text-align: center;">Wymiana ognia w ciemności</h4>
+        </div>
+        <!-- Card 3 -->
+        <div class="hud-card" style="cursor: pointer; padding: 15px;" onclick="openLightbox('assets/media/LT3.jpg', 'DOBÓR SYSTEMÓW UZBROJENIA')">
+          <div class="card-num">IMG_LT // 03</div>
+          <div class="card-img-holder" style="height: 180px;">
+            <img src="assets/media/LT3.jpg" alt="Dobieranie sprzętu">
+          </div>
+          <h4 style="font-family: var(--font-hud); font-size: 0.95rem; color: #fff; text-transform: uppercase; text-align: center;">Dostosowanie wyposażenia</h4>
+        </div>
+        <!-- Card 4 -->
+        <div class="hud-card" style="cursor: pointer; padding: 15px;" onclick="openLightbox('assets/media/LT7.jpg', 'PRZEJMOWANIE BAZY ALPHA')">
+          <div class="card-num">IMG_LT // 04</div>
+          <div class="card-img-holder" style="height: 180px;">
+            <img src="assets/media/LT7.jpg" alt="Obrona bazy">
+          </div>
+          <h4 style="font-family: var(--font-hud); font-size: 0.95rem; color: #fff; text-transform: uppercase; text-align: center;">Obrona punktu kontrolnego</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Log Section -->
+    <section class="content-section" id="video-logs" style="border-top: 1px solid var(--border-color); background: rgba(19, 22, 37, 0.4);">
+      <div class="section-header">
+        <span class="section-tag">ZAPISY KAMER POKŁADOWYCH</span>
+        <h2 class="section-title">WIDEO <span>DOKUMENTACJA</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="hud-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+        <!-- Video Card 1 -->
+        <div class="hud-card" style="padding: 15px;">
+          <div class="card-num">CAM_SEC // 01</div>
+          <div style="width: 100%; height: 180px; overflow: hidden; position: relative; margin-bottom: 12px; border: 1px solid rgba(255, 255, 255, 0.05); clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+              <source src="assets/media/boy-wearing-light-up-head-gear-holds-laser-gun-2026-01-22-22-38-20-utc.mp4" type="video/mp4">
+            </video>
+          </div>
+          <h4 style="font-family: var(--font-hud); font-size: 1rem; color: #fff; text-transform: uppercase; text-align:center;">Gra indywidualna</h4>
+        </div>
+
+        <!-- Video Card 2 -->
+        <div class="hud-card" style="padding: 15px;">
+          <div class="card-num">CAM_SEC // 02</div>
+          <div style="width: 100%; height: 180px; overflow: hidden; position: relative; margin-bottom: 12px; border: 1px solid rgba(255, 255, 255, 0.05); clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+              <source src="assets/media/group-of-happy-teenagers-with-laser-guns-having-fu-2025-12-17-05-38-25-utc.mp4" type="video/mp4">
+            </video>
+          </div>
+          <h4 style="font-family: var(--font-hud); font-size: 1rem; color: #fff; text-transform: uppercase; text-align:center;">Operacje drużynowe</h4>
+        </div>
+
+        <!-- Video Card 3 -->
+        <div class="hud-card" style="padding: 15px;">
+          <div class="card-num">CAM_SEC // 03</div>
+          <div style="width: 100%; height: 180px; overflow: hidden; position: relative; margin-bottom: 12px; border: 1px solid rgba(255, 255, 255, 0.05); clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+              <source src="assets/media/two-young-adults-play-laser-tag-game-in-dark-2025-12-17-11-11-49-utc.mov" type="video/mp4">
+            </video>
+          </div>
+          <h4 style="font-family: var(--font-hud); font-size: 1rem; color: #fff; text-transform: uppercase; text-align:center;">Manewry na arenie</h4>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Dynamic Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" class="lightbox-content" src="" alt="Tactical View" onclick="event.stopPropagation()">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+
+  <!-- Mobile bottom nav -->
   <nav class="bottom-nav">
     <a href="index.html">
       <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -71,6 +200,74 @@
       <span>Kontakt</span>
     </a>
   </nav>
+
+  <!-- Interactive JavaScript for Lightbox -->
+  <script>
+    function openLightbox(src, title) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const caption = document.getElementById('lightbox-caption');
+      
+      img.src = src;
+      caption.innerText = title;
+      lightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Disable page scrolling
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.body.style.overflow = 'auto'; // Enable page scrolling
+    }
+  </script>
+
+  <!-- Style Additions for Lightbox -->
+  <style>
+    /* Lightbox Modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      inset: 0;
+      background: rgba(7, 8, 12, 0.95);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: #fff;
+      font-size: 3rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+      user-select: none;
+    }
+    .lightbox-close:hover {
+      color: var(--accent-primary);
+    }
+    .lightbox-content {
+      max-width: 85%;
+      max-height: 75%;
+      border: 1px solid var(--accent-primary);
+      box-shadow: 0 0 30px rgba(var(--accent-primary-rgb), 0.4);
+      clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    }
+    .lightbox-caption {
+      margin-top: 20px;
+      color: #fff;
+      font-family: var(--font-hud);
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 10px rgba(255, 87, 34, 0.3);
+    }
+  </style>
+
+  <footer>
+    <p>&copy; 2026 LASER TAG TACTICAL ARENA GIŻYCKO. BASE_COMMAND // ALL RIGHTS RESERVED.</p>
+  </footer>
 
 </body>
 </html>

@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Magazyn Laser Tag Giżycko</title>
+  <title>Główna - Laser Tag Giżycko Tactical Arena</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="start">
 
+  <!-- Glow Backgrounds -->
+  <div class="grid-glow"></div>
+  <div class="grid-glow-alt"></div>
+
+  <!-- Top Nav with Central Logo -->
   <nav class="top-nav">
     <div class="line left-line"></div>
     <div class="logo">
@@ -16,6 +21,7 @@
     <div class="line right-line"></div>
   </nav>
 
+  <!-- Desktop floating menu -->
   <div class="desktop-menu">
     <a href="index.html" class="active">Start</a>
     <a href="oferta.html">Oferta</a>
@@ -25,36 +31,226 @@
     <a href="kontakt.html">Kontakt</a>
   </div>
 
-  <main>
+  <main style="padding-top: 90px;">
+    
+    <!-- Hero Section -->
     <section class="hero">
       <div class="video-overlay"></div>
       <video autoplay muted loop playsinline class="bg-video">
         <source src="assets/media/boy-wearing-light-up-head-gear-holds-laser-gun-2026-01-22-22-38-20-utc.mp4" type="video/mp4">
       </video>
-      <div class="hero-content tactical-panel">
-        <h1>MAGAZYN LASER TAG</h1>
-        <p>GIŻYCKO // ARENA 2000m2 // MOBILNY LASER TAG</p>
-        <div class="hero-buttons">
-          <a href="oferta.html" class="btn btn-primary">Zobacz ofertę</a>
-          <a href="kontakt.html" class="btn btn-outline">Zarezerwuj</a>
+      <div class="hud-panel">
+        <div class="hud-metadata">LOC // BASE_GIZYCKO // ARENA_SYS_READY</div>
+        <h1 class="hud-title">TAKTYCZNA ARENA <span>LASER TAG</span></h1>
+        <p class="hud-desc">
+          Wejdź na najwyższy poziom realizmu. 2000m² zaawansowanego poligonu, dym, efekty świetlne i bezkompromisowy system zliczania trafień na żywo.
+        </p>
+        <div class="btn-hud-container">
+          <a href="oferta.html" class="btn-hud btn-hud-orange">Rozpocznij misję</a>
+          <a href="kontakt.html" class="btn-hud btn-hud-cyan">Rezerwacja bazy</a>
         </div>
       </div>
     </section>
 
-    <section class="features">
-      <div class="feature-card">
-        <img src="assets/media/LT1.jpg" alt="Laser Tag Akcja">
-        <h2>Adrenalina</h2>
-        <p>Najlepsza arena na Mazurach. Poczuj klimat prawdziwej walki wojskowej, dymu i osłon taktycznych.</p>
+    <!-- Operational Status Bar -->
+    <section style="background: rgba(19, 22, 37, 0.6); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 20px 0;">
+      <div style="max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px; padding: 0 20px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="width: 8px; height: 8px; background: var(--accent-success); border-radius: 50%; box-shadow: 0 0 10px var(--accent-success); animation: pulse 1.5s infinite;"></span>
+          <span style="font-family: var(--font-hud); font-size: 0.85rem; letter-spacing: 0.1em; color: var(--accent-success);">SYSTEM OPERACYJNY: LIVE</span>
+        </div>
+        <div style="font-family: var(--font-hud); font-size: 0.85rem; color: var(--text-muted);">
+          GRACZE W GRZE: <span class="text-accent" style="font-weight:700;">14 / 24</span>
+        </div>
+        <div style="font-family: var(--font-hud); font-size: 0.85rem; color: var(--text-muted);">
+          TEMP. SEKTORA: <span class="text-cyan" style="font-weight:700;">19.5 °C</span>
+        </div>
+        <div style="font-family: var(--font-hud); font-size: 0.85rem; color: var(--text-muted);">
+          NASTĘPNY BRIEFING: <span style="color:#fff; font-weight:700;">ZA 12 MIN</span>
+        </div>
       </div>
-      <div class="feature-card">
-        <img src="assets/media/LT6.jpg" alt="Sprzęt Laser Tag">
-        <h2>Systemy Celowania</h2>
-        <p>Wysoce precyzyjny sprzęt bezkontaktowy. Systemy zliczające trafienia na żywo z dedykowanym HUD.</p>
+    </section>
+
+    <!-- Main Features -->
+    <section class="content-section">
+      <div class="section-header">
+        <span class="section-tag">RAPORT TAKTYCZNY</span>
+        <h2 class="section-title">PARAMETRY <span>POLIGONU</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="hud-grid">
+        <!-- Feature 1 -->
+        <div class="hud-card">
+          <div class="card-num">SEC_01 // AREA</div>
+          <div class="card-img-holder">
+            <img src="assets/media/LT7.jpg" alt="Arena Laser Tag">
+          </div>
+          <h3 class="card-title">Mroczny Labirynt</h3>
+          <p class="card-desc">
+            Ponad 2000m² powierzchni bojowej wypełnionej przeszkodami, kryjówkami i antresolami. Całość zanurzona w gęstym dymie i pulsującym oświetleniu UV.
+          </p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="hud-card">
+          <div class="card-num">SEC_02 // GEAR</div>
+          <div class="card-img-holder">
+            <img src="assets/media/LT4.jpg" alt="Sprzęt Laser Tag">
+          </div>
+          <h3 class="card-title">Systemy Celownicze</h3>
+          <p class="card-desc">
+            Bezpieczne fale podczerwone, precyzyjne kolimatory i czujniki trafień na opaskach oraz kamizelkach. Statystyki gry są przesyłane bezpośrednio do bazy.
+          </p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="hud-card">
+          <div class="card-num">SEC_03 // HUD</div>
+          <div class="card-img-holder">
+            <img src="assets/media/LT6.jpg" alt="Statystyki Laser Tag">
+          </div>
+          <h3 class="card-title">Statystyki Live</h3>
+          <p class="card-desc">
+            Każde trafienie, eliminacja i asysta są rejestrowane w czasie rzeczywistym. Po zakończonej rozgrywce otrzymujesz szczegółową kartę walki ze statystykami.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Tactical Map -->
+    <section class="content-section" style="border-top: 1px solid var(--border-color); background: rgba(15, 17, 26, 0.4);">
+      <div class="section-header">
+        <span class="section-tag">SYSTEMY MAPOWANIA</span>
+        <h2 class="section-title">PLAN <span>TAKTYCZNY BASE_01</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;" class="d-md-grid-2">
+        <!-- SVG Interactive Map -->
+        <div style="background: rgba(0, 0, 0, 0.5); padding: 30px; border: 1px solid var(--border-color); clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);">
+          <svg viewBox="0 0 500 350" style="width: 100%; height: auto; display: block;">
+            <!-- Grid lines -->
+            <defs>
+              <pattern id="gridPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#gridPattern)" />
+            
+            <!-- Arena Boundary -->
+            <rect x="20" y="20" width="460" height="310" fill="none" stroke="rgba(0, 229, 255, 0.2)" stroke-width="2" stroke-dasharray="5 5" />
+            
+            <!-- Obstacles / Walls -->
+            <rect x="80" y="70" width="100" height="20" fill="rgba(19, 22, 37, 0.8)" stroke="rgba(255,255,255,0.1)" />
+            <rect x="320" y="70" width="100" height="20" fill="rgba(19, 22, 37, 0.8)" stroke="rgba(255,255,255,0.1)" />
+            <rect x="200" y="150" width="100" height="50" fill="rgba(19, 22, 37, 0.8)" stroke="rgba(255,255,255,0.1)" />
+            <rect x="80" y="260" width="100" height="20" fill="rgba(19, 22, 37, 0.8)" stroke="rgba(255,255,255,0.1)" />
+            <rect x="320" y="260" width="100" height="20" fill="rgba(19, 22, 37, 0.8)" stroke="rgba(255,255,255,0.1)" />
+            
+            <!-- Spawn Zones -->
+            <circle cx="50" cy="175" r="30" fill="rgba(0, 229, 255, 0.05)" stroke="var(--accent-secondary)" stroke-width="1.5" />
+            <text x="50" y="180" font-family="Orbitron" font-size="8" fill="var(--accent-secondary)" text-anchor="middle">SPAWN A</text>
+            
+            <circle cx="450" cy="175" r="30" fill="rgba(255, 87, 34, 0.05)" stroke="var(--accent-primary)" stroke-width="1.5" />
+            <text x="450" y="180" font-family="Orbitron" font-size="8" fill="var(--accent-primary)" text-anchor="middle">SPAWN B</text>
+
+            <!-- Clickable Interactive Points -->
+            <g class="map-point" style="cursor: pointer;" onclick="selectZone('checkpoint-alfa', 'STREFA ALFA (BAZA ALFA)', 'Główny punkt kontrolny znajdujący się w centralnej części areny. Otoczony metalowymi osłonami, idealny do obrony i organizowania zasadzek na wrogie jednostki.')">
+              <circle cx="150" cy="120" r="12" fill="var(--accent-primary)" opacity="0.3" class="pulse-circle"/>
+              <circle cx="150" cy="120" r="6" fill="var(--accent-primary)"/>
+              <text x="150" y="105" font-family="Orbitron" font-size="9" fill="#fff" text-anchor="middle">BASE_ALPHA</text>
+            </g>
+
+            <g class="map-point" style="cursor: pointer;" onclick="selectZone('tower-bravo', 'WIEŻA OBSERWACYJNA (BRAVO)', 'Podwyższenie taktyczne zapewniające pełen podgląd na strefę centralną i korytarze Spawn B. Kluczowa pozycja dla graczy posługujących się karabinami snajperskimi.')">
+              <circle cx="350" cy="120" r="12" fill="var(--accent-secondary)" opacity="0.3" class="pulse-circle"/>
+              <circle cx="350" cy="120" r="6" fill="var(--accent-secondary)"/>
+              <text x="350" y="105" font-family="Orbitron" font-size="9" fill="#fff" text-anchor="middle">TOWER_BRAVO</text>
+            </g>
+
+            <g class="map-point" style="cursor: pointer;" onclick="selectZone('choke-point', 'KORYTARZ ŚMIERCI', 'Długi, prosty korytarz we wschodniej części areny o ograniczonej liczbie osłon taktycznych. Przejście tą strefą wymaga doskonałego wsparcia i osłony tarczy.')">
+              <circle cx="250" cy="230" r="12" fill="var(--accent-success)" opacity="0.3" class="pulse-circle"/>
+              <circle cx="250" cy="230" r="6" fill="var(--accent-success)"/>
+              <text x="250" y="215" font-family="Orbitron" font-size="9" fill="#fff" text-anchor="middle">CHOKE_POINT</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Zone details text -->
+        <div id="zone-details" class="hud-card" style="border-color: var(--accent-secondary);">
+          <div class="card-num">PLAN_SEC // INFO</div>
+          <h3 class="card-title" id="zone-title" style="color: var(--accent-secondary);">Kliknij punkt na mapie</h3>
+          <p class="card-desc" id="zone-desc" style="margin-top: 15px;">
+            Wybierz dowolny aktywny cel taktyczny na planie areny powyżej, aby przeanalizować charakterystykę terenu i zaplanować manewry bojowe.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leaderboard / Hall of fame -->
+    <section class="content-section" style="border-top: 1px solid var(--border-color);">
+      <div class="section-header">
+        <span class="section-tag">STATYSTYKI DOWÓDZTWA</span>
+        <h2 class="section-title">RANKING <span>ELITARNYCH STRZELCÓW</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 25px; clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:15px;">
+          <h3 style="font-family:var(--font-hud); font-size:1.1rem; text-transform:uppercase; color:#fff;">KARTA REKORDÓW MIESIĄCA</h3>
+          <span style="font-family:var(--font-hud); font-size:0.75rem; color:var(--accent-secondary);">AKTUALIZACJA: CO GODZINĘ</span>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th style="width: 80px;">Ranga</th>
+                <th>Kryptonim</th>
+                <th>Punkty</th>
+                <th>Trafienia</th>
+                <th>Precyzja</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="leaderboard-rank">#01</td>
+                <td style="font-weight:700; color:#fff;">Spectre_LT</td>
+                <td style="font-family:var(--font-hud); color:var(--accent-primary);">14,890</td>
+                <td>312</td>
+                <td class="text-cyan">87.5%</td>
+                <td class="text-success" style="font-family:var(--font-hud); font-size:0.8rem;">ONLINE</td>
+              </tr>
+              <tr>
+                <td class="leaderboard-rank">#02</td>
+                <td style="font-weight:700; color:#fff;">Viper_99</td>
+                <td style="font-family:var(--font-hud); color:var(--accent-primary);">13,420</td>
+                <td>289</td>
+                <td class="text-cyan">82.1%</td>
+                <td style="font-family:var(--font-hud); font-size:0.8rem; color:var(--text-muted);">OFFLINE</td>
+              </tr>
+              <tr>
+                <td class="leaderboard-rank">#03</td>
+                <td style="font-weight:700; color:#fff;">Grom_Mazury</td>
+                <td style="font-family:var(--font-hud); color:var(--accent-primary);">12,980</td>
+                <td>275</td>
+                <td class="text-cyan">79.8%</td>
+                <td class="text-success" style="font-family:var(--font-hud); font-size:0.8rem;">ONLINE</td>
+              </tr>
+              <tr>
+                <td class="leaderboard-rank">#04</td>
+                <td style="font-weight:700; color:#fff;">Ghost_Rider</td>
+                <td style="font-family:var(--font-hud); color:var(--accent-primary);">11,200</td>
+                <td>241</td>
+                <td class="text-cyan">74.5%</td>
+                <td style="font-family:var(--font-hud); font-size:0.8rem; color:var(--text-muted);">OFFLINE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Mobile navigation HUD at bottom -->
   <nav class="bottom-nav">
     <a href="index.html" class="active">
       <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -73,6 +269,54 @@
       <span>Kontakt</span>
     </a>
   </nav>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    function selectZone(id, title, desc) {
+      document.getElementById('zone-title').innerText = title;
+      document.getElementById('zone-desc').innerText = desc;
+      
+      // Update border color depending on zone
+      const card = document.getElementById('zone-details');
+      if (id === 'checkpoint-alfa') {
+        card.style.borderColor = 'var(--accent-primary)';
+      } else if (id === 'tower-bravo') {
+        card.style.borderColor = 'var(--accent-secondary)';
+      } else {
+        card.style.borderColor = 'var(--accent-success)';
+      }
+    }
+  </script>
+
+  <!-- Pulse CSS Animations for Map -->
+  <style>
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+    @keyframes pulseGlow {
+      0% { r: 10px; opacity: 0.6; }
+      100% { r: 24px; opacity: 0; }
+    }
+    .pulse-circle {
+      animation: pulseGlow 1.8s infinite ease-out;
+      transform-origin: center;
+    }
+    .d-md-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) {
+      .d-md-grid-2 {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+  </style>
+
+  <footer>
+    <p>&copy; 2026 LASER TAG TACTICAL ARENA GIŻYCKO. BASE_COMMAND // ALL RIGHTS RESERVED.</p>
+  </footer>
 
 </body>
 </html>

@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cennik - Laser Tag Giżycko</title>
+  <title>Cennik - Laser Tag Giżycko Tactical Arena</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="cennik">
 
+  <!-- Glow Backgrounds -->
+  <div class="grid-glow"></div>
+  <div class="grid-glow-alt"></div>
+
+  <!-- Top Nav -->
   <nav class="top-nav">
     <div class="line left-line"></div>
     <div class="logo">
@@ -16,6 +21,7 @@
     <div class="line right-line"></div>
   </nav>
 
+  <!-- Desktop menu -->
   <div class="desktop-menu">
     <a href="index.html">Start</a>
     <a href="oferta.html">Oferta</a>
@@ -25,28 +31,215 @@
     <a href="kontakt.html">Kontakt</a>
   </div>
 
-  <main>
+  <main style="padding-top: 90px;">
+    
+    <!-- Hero Section -->
     <section class="hero">
       <div class="video-overlay"></div>
       <video autoplay muted loop playsinline class="bg-video">
         <source src="assets/media/two-young-adults-play-laser-tag-game-in-dark-2025-12-17-11-11-49-utc.mov" type="video/mp4">
       </video>
-      <div class="hero-content tactical-panel">
-        <h1>CENNIK / PAKIETY</h1>
-        <p>WYBIERZ SWOJĄ MISJĘ</p>
+      <div class="hud-panel">
+        <div class="hud-metadata">FINANCE // PRICING // ONLINE_CALCULATOR</div>
+        <h1 class="hud-title">OFICJALNY <span>CENNIK BAZY</span></h1>
+        <p class="hud-desc">
+          Wszystkie wejścia indywidualne, pakiety urodzinowe oraz opcje wynajmu areny przepisane z oficjalnego rejestru dowództwa.
+        </p>
+        <div class="btn-hud-container">
+          <a href="#calculator" class="btn-hud btn-hud-orange">Kalkulator misji</a>
+          <a href="#indiv-pricing" class="btn-hud btn-hud-cyan">Tabela opłat</a>
+        </div>
       </div>
     </section>
 
-    <section class="features" style="justify-content: center;">
-      <div class="feature-card" style="max-width: 600px; margin: 0 auto;">
-        <img src="assets/media/CENNIKIKI%20I%20PAKIETY%20LT.jpg" alt="Cennik Laser Tag" style="object-fit: contain; background: #000;">
-        <h2>Dostępne Pakiety</h2>
-        <p>Skontaktuj się z dowództwem w celu rezerwacji wybranego pakietu taktycznego.</p>
-        <a href="kontakt.html" class="btn btn-primary" style="display:inline-block; margin-top:20px;">Rezerwuj termin</a>
+    <!-- Detailed Pricing Tables Section -->
+    <section class="content-section" id="indiv-pricing">
+      <div class="section-header">
+        <span class="section-tag">REJESTR OPŁAT</span>
+        <h2 class="section-title">WEJŚCIA <span>INDYWIDUALNE</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="d-md-grid-2" style="display: grid; gap: 30px; margin-bottom: 60px;">
+        <!-- Pon-Czw Card -->
+        <div class="hud-card">
+          <div class="card-num">RATE // MON_THU</div>
+          <h3 class="card-title" style="color: var(--accent-secondary);">Poniedziałek - Czwartek</h3>
+          <p class="card-desc" style="margin-bottom: 20px;">Sesja 1h (10 min szkolenia + 20 min gry + 10 min przerwy + 20 min gry)</p>
+          <ul style="list-style-type: none; font-family: var(--font-hud); font-size: 0.95rem; color: var(--text-primary); display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+            <li>🔸 Grupa do 6 osób (min. 4) — <span class="text-accent" style="font-weight:700;">50 zł</span> / os.</li>
+            <li>🔸 Grupa do 10 osób — <span class="text-accent" style="font-weight:700;">45 zł</span> / os.</li>
+            <li>🔸 Grupa 10-20 osób — <span class="text-accent" style="font-weight:700;">40 zł</span> / os.</li>
+          </ul>
+          <p class="card-desc" style="font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px;">
+            * Dopłata do każdej kolejnej osoby: 30 zł (maksymalnie 2 dodatkowe osoby na każdą grupę).
+          </p>
+        </div>
+
+        <!-- Pt-Niedz Card -->
+        <div class="hud-card" style="border-color: var(--accent-primary);">
+          <div class="card-num">RATE // FRI_SUN</div>
+          <h3 class="card-title" style="color: var(--accent-primary);">Piątek - Niedziela</h3>
+          <p class="card-desc" style="margin-bottom: 20px;">Sesja 1h (10 min szkolenia + 20 min gry + 10 min przerwy + 20 min gry)</p>
+          <ul style="list-style-type: none; font-family: var(--font-hud); font-size: 0.95rem; color: var(--text-primary); display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+            <li>🔸 Grupa do 6 osób (min. 4) — <span class="text-accent" style="font-weight:700;">60 zł</span> / os.</li>
+            <li>🔸 Grupa do 10 osób — <span class="text-accent" style="font-weight:700;">55 zł</span> / os.</li>
+            <li>🔸 Grupa 10-20 osób — <span class="text-accent" style="font-weight:700;">50 zł</span> / os.</li>
+          </ul>
+          <p class="card-desc" style="font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px;">
+            * Dopłata do każdej kolejnej osoby: 35 zł (maksymalnie 2 dodatkowe osoby na każdą grupę).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Birthday Packages Section -->
+    <section class="content-section" style="border-top: 1px solid var(--border-color); background: rgba(19, 22, 37, 0.2);">
+      <div class="section-header">
+        <span class="section-tag">PROCEDURY URODZINOWE</span>
+        <h2 class="section-title">PAKIETY <span>IMPREZOWE</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- S, M, L Packages Explanations -->
+      <div class="hud-grid" style="margin-bottom: 40px;">
+        <div class="hud-card">
+          <div class="card-num">PK_S // 2.0H</div>
+          <h3 class="card-title" style="color:var(--accent-secondary);">Pakiet S</h3>
+          <p class="card-desc">
+            Wejście na 2 godziny: 10 min szkolenia + gra 3x po 20 min + 10 min przerwy między rozgrywkami + 30 min na tort.
+          </p>
+        </div>
+        <div class="hud-card">
+          <div class="card-num">PK_M // 2.5H</div>
+          <h3 class="card-title" style="color:var(--accent-primary);">Pakiet M</h3>
+          <p class="card-desc">
+            Wejście na 2,5 godziny: 10 min szkolenia + gra 3x po 30 min + 10 min przerwy między rozgrywkami + 30 min na tort.
+          </p>
+        </div>
+        <div class="hud-card">
+          <div class="card-num">PK_L // 3.0H</div>
+          <h3 class="card-title" style="color:var(--accent-success);">Pakiet L</h3>
+          <p class="card-desc">
+            Wejście na 3 godziny: 10 min szkolenia + gra 2x po 20 min i 2x po 30 min + 10 min przerwy między rozgrywkami + 40 min na tort.
+          </p>
+        </div>
+      </div>
+
+      <!-- S, M, L Cost Matrix -->
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 30px; clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);">
+        <h3 style="font-family: var(--font-hud); color: #fff; font-size: 1.2rem; text-transform: uppercase; margin-bottom: 20px; text-align: center;">TARYFIKATOR PAKIETÓW URODZINOWYCH</h3>
+        
+        <div style="overflow-x: auto;">
+          <table class="leaderboard-table" style="text-align: center;">
+            <thead>
+              <tr>
+                <th style="text-align: center;">Liczba osób</th>
+                <th style="text-align: center;">Dni tygodnia</th>
+                <th style="text-align: center;">Pakiet S</th>
+                <th style="text-align: center;">Pakiet M</th>
+                <th style="text-align: center;">Pakiet L</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:700; color:#fff;">Do 10 osób</td>
+                <td>Pon - Czw<br><span class="text-cyan">Pt - Ndz</span></td>
+                <td>550 zł<br><span class="text-cyan">650 zł</span></td>
+                <td>600 zł<br><span class="text-cyan">700 zł</span></td>
+                <td>650 zł<br><span class="text-cyan">750 zł</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#fff;">Do 15 osób</td>
+                <td>Pon - Czw<br><span class="text-cyan">Pt - Ndz</span></td>
+                <td>750 zł<br><span class="text-cyan">850 zł</span></td>
+                <td>800 zł<br><span class="text-cyan">900 zł</span></td>
+                <td>850 zł<br><span class="text-cyan">950 zł</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#fff;">Do 20 osób</td>
+                <td>Pon - Czw<br><span class="text-cyan">Pt - Ndz</span></td>
+                <td>850 zł<br><span class="text-cyan">950 zł</span></td>
+                <td>900 zł<br><span class="text-cyan">1000 zł</span></td>
+                <td>950 zł<br><span class="text-cyan">1050 zł</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="card-desc" style="font-size: 0.85rem; margin-top: 20px; text-align: center;">
+          * Liczba osób dotyczy wyłącznie graczy. Każda kolejna osoba podlega indywidualnej wycenie.
+          <br>
+          * Kubeczki, miseczki, talerzyki (jednorazowe) są w pełni wliczone w cenę każdego pakietu.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Calculator -->
+    <section class="content-section" id="calculator" style="border-top: 1px solid var(--border-color);">
+      <div class="section-header">
+        <span class="section-tag">KONFIGURATOR BOJOWY</span>
+        <h2 class="section-title">KALKULATOR <span>WYCENY MISJI</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="calc-container">
+        <!-- Day Type -->
+        <div class="calc-group">
+          <label class="calc-label">Dzień rozgrywki:</label>
+          <div class="calc-grid-btns">
+            <button class="calc-btn-option active" id="day-weekday" onclick="selectDay('weekday', this)">PON - CZW</button>
+            <button class="calc-btn-option" id="day-weekend" onclick="selectDay('weekend', this)">PT - NDZ</button>
+          </div>
+        </div>
+
+        <!-- Mode Selector -->
+        <div class="calc-group">
+          <label class="calc-label">Rodzaj wejścia:</label>
+          <div class="calc-grid-btns">
+            <button class="calc-btn-option active" id="mode-indiv" onclick="selectMode('indiv', this)">INDYWIDUALNE</button>
+            <button class="calc-btn-option" id="mode-bday" onclick="selectMode('bday', this)">URODZINY (PAKIET)</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Group 1: Individual Players count -->
+        <div class="calc-group" id="calc-group-players">
+          <label class="calc-label" for="players-range">Liczba graczy: <span id="players-val" class="text-accent">10</span> osób</label>
+          <div class="calc-slider-box">
+            <input type="range" id="players-range" class="calc-slider" min="4" max="22" value="10" oninput="updateCalculator()">
+          </div>
+        </div>
+
+        <!-- Dynamic Group 2: Birthday Package Tier & Size -->
+        <div class="calc-group" id="calc-group-bday-options" style="display:none;">
+          <label class="calc-label">Rozmiar grupy urodzinowej:</label>
+          <div class="calc-grid-btns" style="margin-bottom:15px;">
+            <button class="calc-btn-option active" id="tier-10" onclick="selectBdayTier('10', this)">DO 10 GRACZY</button>
+            <button class="calc-btn-option" id="tier-15" onclick="selectBdayTier('15', this)">DO 15 GRACZY</button>
+            <button class="calc-btn-option" id="tier-20" onclick="selectBdayTier('20', this)">DO 20 GRACZY</button>
+          </div>
+          
+          <label class="calc-label">Czas trwania i pakiet:</label>
+          <div class="calc-grid-btns">
+            <button class="calc-btn-option active" id="size-S" onclick="selectBdaySize('S', this)">PAKIET S (2.0H)</button>
+            <button class="calc-btn-option" id="size-M" onclick="selectBdaySize('M', this)">PAKIET M (2.5H)</button>
+            <button class="calc-btn-option" id="size-L" onclick="selectBdaySize('L', this)">PAKIET L (3.0H)</button>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="calc-summary">
+          <div class="calc-summary-label">SZACOWANA CENA:</div>
+          <div class="calc-price"><span id="total-price">450</span> zł</div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="kontakt.html" class="btn-hud btn-hud-orange" style="text-decoration:none; display:inline-block;">Rezerwuj termin z raportu</a>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Mobile bottom nav -->
   <nav class="bottom-nav">
     <a href="index.html">
       <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -65,6 +258,122 @@
       <span>Kontakt</span>
     </a>
   </nav>
+
+  <!-- Pricing Calculator Logic -->
+  <script>
+    let dayType = 'weekday'; // weekday or weekend
+    let modeType = 'indiv'; // indiv or bday
+    let bdayTier = '10'; // 10, 15, 20
+    let bdaySize = 'S'; // S, M, L
+
+    function selectDay(type, element) {
+      document.getElementById('day-weekday').classList.remove('active');
+      document.getElementById('day-weekend').classList.remove('active');
+      element.classList.add('active');
+      dayType = type;
+      updateCalculator();
+    }
+
+    function selectMode(mode, element) {
+      document.getElementById('mode-indiv').classList.remove('active');
+      document.getElementById('mode-bday').classList.remove('active');
+      element.classList.add('active');
+      modeType = mode;
+      
+      if (mode === 'indiv') {
+        document.getElementById('calc-group-players').style.display = 'block';
+        document.getElementById('calc-group-bday-options').style.display = 'none';
+      } else {
+        document.getElementById('calc-group-players').style.display = 'none';
+        document.getElementById('calc-group-bday-options').style.display = 'block';
+      }
+      updateCalculator();
+    }
+
+    function selectBdayTier(tier, element) {
+      document.getElementById('tier-10').classList.remove('active');
+      document.getElementById('tier-15').classList.remove('active');
+      document.getElementById('tier-20').classList.remove('active');
+      element.classList.add('active');
+      bdayTier = tier;
+      updateCalculator();
+    }
+
+    function selectBdaySize(size, element) {
+      document.getElementById('size-S').classList.remove('active');
+      document.getElementById('size-M').classList.remove('active');
+      document.getElementById('size-L').classList.remove('active');
+      element.classList.add('active');
+      bdaySize = size;
+      updateCalculator();
+    }
+
+    function updateCalculator() {
+      let price = 0;
+      
+      if (modeType === 'indiv') {
+        const players = parseInt(document.getElementById('players-range').value);
+        document.getElementById('players-val').innerText = players;
+        
+        if (dayType === 'weekday') {
+          // Pon-Czw Individual Rates
+          if (players <= 6) {
+            price = players * 50;
+          } else if (players <= 10) {
+            price = players * 45;
+          } else {
+            price = players * 40;
+          }
+        } else {
+          // Pt-Ndz Individual Rates
+          if (players <= 6) {
+            price = players * 60;
+          } else if (players <= 10) {
+            price = players * 55;
+          } else {
+            price = players * 50;
+          }
+        }
+      } else {
+        // Birthday Packages Rates
+        // Matrix: [dayType][bdayTier][bdaySize]
+        const rates = {
+          weekday: {
+            '10': { S: 550, M: 600, L: 650 },
+            '15': { S: 750, M: 800, L: 850 },
+            '20': { S: 850, M: 900, L: 950 }
+          },
+          weekend: {
+            '10': { S: 650, M: 700, L: 750 },
+            '15': { S: 850, M: 900, L: 950 },
+            '20': { S: 950, M: 1000, L: 1050 }
+          }
+        };
+        price = rates[dayType][bdayTier][bdaySize];
+      }
+      
+      document.getElementById('total-price').innerText = price;
+    }
+
+    // Initial run
+    updateCalculator();
+  </script>
+
+  <style>
+    .d-md-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) {
+      .d-md-grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+
+  <footer>
+    <p>&copy; 2026 LASER TAG TACTICAL ARENA GIŻYCKO. BASE_COMMAND // ALL RIGHTS RESERVED.</p>
+  </footer>
 
 </body>
 </html>

@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kontakt - Laser Tag Giżycko</title>
+  <title>Kontakt - Laser Tag Giżycko Tactical Arena</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="kontakt">
 
+  <!-- Glow Backgrounds -->
+  <div class="grid-glow"></div>
+  <div class="grid-glow-alt"></div>
+
+  <!-- Top Nav -->
   <nav class="top-nav">
     <div class="line left-line"></div>
     <div class="logo">
@@ -16,6 +21,7 @@
     <div class="line right-line"></div>
   </nav>
 
+  <!-- Desktop menu -->
   <div class="desktop-menu">
     <a href="index.html">Start</a>
     <a href="oferta.html">Oferta</a>
@@ -25,28 +31,133 @@
     <a href="kontakt.html" class="active">Kontakt</a>
   </div>
 
-  <main>
+  <main style="padding-top: 90px;">
+    
+    <!-- Hero Section -->
     <section class="hero">
       <div class="video-overlay"></div>
       <video autoplay muted loop playsinline class="bg-video">
         <source src="assets/media/woman-holding-laser-gun-in-dark-arena-2025-12-17-16-36-59-utc.mov" type="video/mp4">
       </video>
-      <div class="hero-content tactical-panel">
-        <h1>CENTRUM DOWODZENIA</h1>
-        <p>KONTAKT I REZERWACJE</p>
+      <div class="hud-panel">
+        <div class="hud-metadata">HQ // COMMAND_CENTER // CHANNELS</div>
+        <h1 class="hud-title">CENTRUM <span>KONTROLI MISJI</span></h1>
+        <p class="hud-desc">
+          Skontaktuj się bezpośrednio z dowództwem bazy w Giżycku, wyślij zgłoszenie rezerwacyjne lub sprawdź odpowiedzi na najczęstsze pytania.
+        </p>
+        <div class="btn-hud-container">
+          <a href="#booking-form" class="btn-hud btn-hud-orange">Napisz do nas</a>
+          <a href="#faq" class="btn-hud btn-hud-cyan">Najczęstsze pytania</a>
+        </div>
       </div>
     </section>
 
-    <section class="features">
-      <div class="feature-card" style="text-align: center; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: var(--color-accent-primary);">Dane Operacyjne</h2>
-        <p style="margin: 15px 0; color: #fff;"><strong>Baza:</strong> Fryderyka Chopina 1, 11-500 Giżycko</p>
-        <p style="margin: 15px 0; color: #fff;"><strong>Łączność:</strong> <a href="tel:+48662797059" style="color: var(--color-accent-primary); text-decoration:none;">662 797 059</a></p>
-        <a href="tel:+48662797059" class="btn btn-primary" style="display:inline-block; margin-top:20px;">Nawiąż połączenie</a>
+    <!-- Contact details & form -->
+    <section class="content-section" id="booking-form">
+      <div class="section-header">
+        <span class="section-tag">KANAŁY TRANSMISJI DANYCH</span>
+        <h2 class="section-title">WYŚLIJ <span>RAPORT</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="d-md-grid-2" style="display:grid; gap:40px;">
+        <!-- Left: details -->
+        <div class="hud-card" style="border-color: var(--accent-secondary);">
+          <div class="card-num">BASE_INFO // 01</div>
+          <h3 class="card-title" style="color:var(--accent-secondary); margin-bottom: 20px;">DANE HQ</h3>
+          
+          <ul style="list-style-type: none; font-family: var(--font-hud); font-size: 0.95rem; color: var(--text-primary); display: flex; flex-direction: column; gap: 20px;">
+            <li>
+              <span class="text-accent" style="display:block; font-size:0.8rem;">LOKALIZACJA BAZY:</span>
+              Fryderyka Chopina 1, 11-500 Giżycko
+            </li>
+            <li>
+              <span class="text-accent" style="display:block; font-size:0.8rem;">TELEFON OPERACYJNY:</span>
+              <a href="tel:+48662797059" style="color:#fff; text-decoration:none;">662 797 059</a>
+            </li>
+            <li>
+              <span class="text-accent" style="display:block; font-size:0.8rem;">GODZINY BRIEFINGÓW:</span>
+              Poniedziałek — Niedziela // 10:00 - 22:00
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Form -->
+        <form class="tactical-form" onsubmit="event.preventDefault(); alert('Dane wysłane do dowództwa!');" style="margin: 0; width:100%;">
+          <div class="card-num">SEC_SEND // Form</div>
+          <h3 class="card-title" style="font-size:1.3rem; margin-bottom:20px;">FORMULARZ TRANSMISJI</h3>
+          
+          <div class="form-group">
+            <label class="form-label" for="codename">Twój Kryptonim / Imię</label>
+            <input type="text" id="codename" class="form-input" required placeholder="Rekrut_01">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Telefon Łączności</label>
+            <input type="tel" id="phone" class="form-input" required placeholder="+48 000 000 000">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="msg">Opis Misji / Szczegóły rezerwacji</label>
+            <textarea id="msg" class="form-input" style="min-height: 120px; resize: vertical;" required placeholder="Chcę zarezerwować termin..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn-hud btn-hud-orange" style="width: 100%; border:none;">Wyślij Raport do Bazy</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="content-section" id="faq" style="border-top: 1px solid var(--border-color); background: rgba(19, 22, 37, 0.4);">
+      <div class="section-header">
+        <span class="section-tag">PROCEDURY I PYTANIA</span>
+        <h2 class="section-title">BAZA <span>WIEDZY / FAQ</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="faq-list">
+        <!-- Item 1 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Czy laser tag boli albo jest niebezpieczny?</div>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Zdecydowanie nie! W przeciwieństwie do tradycyjnego paintballu, laser tag nie wykorzystuje żadnych pocisków fizycznych ani kulek z farbą. Karabiny emitują bezpieczną falę podczerwieni (taką samą, jak w pilocie do telewizora). Gra jest całkowicie bezbolesna, nie pozostawia sińców ani zabrudzeń.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Od jakiego wieku można zacząć grę na arenie?</div>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Sugerowany minimalny wiek uczestników to 7 lat. Wynika to z wagi i gabarytów sprzętu celowniczego, który rekrut musi nosić w rękach podczas rozgrywek. Dla najmłodszych dobieramy lżejsze konfiguracje uzbrojenia.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Jak należy się ubrać na rozgrywkę?</div>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Zalecamy wygodny ubiór sportowy, najlepiej w ciemnych kolorach (ułatwia to maskowanie w oświetleniu UV) oraz obuwie na płaskiej, stabilnej podeszwie. Pamiętaj, że gra jest bardzo aktywna i dynamiczna.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Czy muszę rezerwować termin z wyprzedzeniem?</div>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              Tak. Z powodu dużego obłożenia areny (zwłaszcza w weekendy, podczas urodzin czy imprez integracyjnych), zalecamy kontakt telefoniczny lub wysłanie formularza z wyprzedzeniem min. kilku dni.
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Mobile bottom nav -->
   <nav class="bottom-nav">
     <a href="index.html">
       <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -65,6 +176,43 @@
       <span>Kontakt</span>
     </a>
   </nav>
+
+  <!-- Interactive JavaScript for FAQ Accordion -->
+  <script>
+    function toggleFaq(element) {
+      // Toggle active class
+      const isActive = element.classList.contains('active');
+      
+      // Close all first
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+        item.querySelector('.faq-a').style.maxHeight = null;
+      });
+      
+      // Open selected if it wasn't already open
+      if (!isActive) {
+        element.classList.add('active');
+        const answer = element.querySelector('.faq-a');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    }
+  </script>
+
+  <style>
+    .d-md-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) {
+      .d-md-grid-2 {
+        grid-template-columns: 0.8fr 1.2fr;
+      }
+    }
+  </style>
+
+  <footer>
+    <p>&copy; 2026 LASER TAG TACTICAL ARENA GIŻYCKO. BASE_COMMAND // ALL RIGHTS RESERVED.</p>
+  </footer>
 
 </body>
 </html>

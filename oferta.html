@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Oferta - Laser Tag Giżycko</title>
+  <title>Oferta - Laser Tag Giżycko Tactical Arena</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="oferta">
 
+  <!-- Glow Backgrounds -->
+  <div class="grid-glow"></div>
+  <div class="grid-glow-alt"></div>
+
+  <!-- Top Nav -->
   <nav class="top-nav">
     <div class="line left-line"></div>
     <div class="logo">
@@ -16,6 +21,7 @@
     <div class="line right-line"></div>
   </nav>
 
+  <!-- Desktop menu -->
   <div class="desktop-menu">
     <a href="index.html">Start</a>
     <a href="oferta.html" class="active">Oferta</a>
@@ -25,32 +31,165 @@
     <a href="kontakt.html">Kontakt</a>
   </div>
 
-  <main>
+  <main style="padding-top: 90px;">
+    
+    <!-- Hero Section -->
     <section class="hero">
       <div class="video-overlay"></div>
       <video autoplay muted loop playsinline class="bg-video">
-        <source src="assets/media/group-of-happy-teenagers-with-laser-guns-having-fu-2025-12-17-05-38-25-utc.mp4" type="video/mp4">
+        <source src="assets/media/woman-holding-laser-gun-in-dark-arena-2025-12-17-16-36-59-utc.mov" type="video/mp4">
       </video>
-      <div class="hero-content tactical-panel">
-        <h1>OFERTA</h1>
-        <p>RODZAJE ROZGRYWEK // TAKTYKI</p>
+      <div class="hud-panel">
+        <div class="hud-metadata">ARSENAL // MISSION_CONFIG // READ_ONLY</div>
+        <h1 class="hud-title">ARSENAŁ I <span>SCENARIUSZE</span></h1>
+        <p class="hud-desc">
+          Wybierz swoją rolę na polu bitwy, dostosuj broń i zatwierdź scenariusz operacyjny ze swoim zespołem.
+        </p>
+        <div class="btn-hud-container">
+          <a href="#scenarios" class="btn-hud btn-hud-orange">Scenariusze</a>
+          <a href="#weapons" class="btn-hud btn-hud-cyan">Konfigurator klas</a>
+        </div>
       </div>
     </section>
 
-    <section class="features">
-      <div class="feature-card">
-        <img src="assets/media/LT2.jpg" alt="Laser Tag">
-        <h2>Wejścia indywidualne</h2>
-        <p>Zbierz oddział i wpadnij zagrać. Minimum 4 osoby gotowe do akcji.</p>
+    <!-- Weapons Customizer Section -->
+    <section class="content-section" id="weapons">
+      <div class="section-header">
+        <span class="section-tag">ZINTEGROWANE KLASY BOJOWE</span>
+        <h2 class="section-title">KONFIGURATOR <span>UZBROJENIA</span></h2>
+        <div class="section-divider"></div>
       </div>
-      <div class="feature-card">
-        <img src="assets/media/LT3.jpg" alt="Laser Tag">
-        <h2>Mobilny Laser Tag</h2>
-        <p>Transportujemy zbrojownię prosto do Was. Dojazd i przygotowanie areny w terenie.</p>
+
+      <div class="customizer-box">
+        <!-- Sidebar Button Selector -->
+        <div class="class-list">
+          <button class="class-btn active" onclick="selectClass('assault', this)">
+            🔫 Szturmowiec (Assault)
+          </button>
+          <button class="class-btn" onclick="selectClass('sniper', this)">
+            🔭 Snajper (Sniper)
+          </button>
+          <button class="class-btn" onclick="selectClass('medic', this)">
+            💉 Medyk (Support/Medic)
+          </button>
+          <button class="class-btn" onclick="selectClass('heavy', this)">
+            🛡️ Wsparcie (Heavy)
+          </button>
+        </div>
+
+        <!-- Display Panel -->
+        <div class="class-display" id="class-display-content">
+          <div class="class-header">
+            <h3 class="class-name" id="display-name">Szturmowiec</h3>
+            <span class="class-role" id="display-role">Zrównoważony Atak // Karabinek Laserowy X-12</span>
+          </div>
+          <p class="card-desc" id="display-desc" style="margin-bottom: 25px; min-height: 80px;">
+            Uniwersalna klasa przeznaczona do walki na średnich dystansach. Wyposażona w karabinek o średniej sile ognia i dużej szybkostrzelności. Idealna do przejmowania punktów i dynamicznej ofensywy.
+          </p>
+          
+          <div class="card-stats">
+            <div>
+              <div class="stat-row">
+                <span class="stat-label">Szybkostrzelność</span>
+                <span class="stat-val" id="stat-fire">80%</span>
+              </div>
+              <div class="stat-bar-outer"><div class="stat-bar-inner" id="bar-fire" style="width: 80%;"></div></div>
+            </div>
+            <div>
+              <div class="stat-row">
+                <span class="stat-label">Zasięg czujnika</span>
+                <span class="stat-val" id="stat-range">65%</span>
+              </div>
+              <div class="stat-bar-outer"><div class="stat-bar-inner" id="bar-range" style="width: 65%;"></div></div>
+            </div>
+            <div>
+              <div class="stat-row">
+                <span class="stat-label">Amunicja / Energia</span>
+                <span class="stat-val" id="stat-ammo">75%</span>
+              </div>
+              <div class="stat-bar-outer"><div class="stat-bar-inner" id="bar-ammo" style="width: 75%;"></div></div>
+            </div>
+            <div>
+              <div class="stat-row">
+                <span class="stat-label">Wytrzymałość (HP)</span>
+                <span class="stat-val" id="stat-hp">100 HP</span>
+              </div>
+              <div class="stat-bar-outer"><div class="stat-bar-inner" id="bar-hp" style="width: 70%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game Scenarios -->
+    <section class="content-section" id="scenarios" style="border-top: 1px solid var(--border-color);">
+      <div class="section-header">
+        <span class="section-tag">MISJE BOJOWE</span>
+        <h2 class="section-title">DODATKOWE <span>SCENARIUSZE GRY</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="hud-grid">
+        <!-- Scenario 1 -->
+        <div class="hud-card">
+          <div class="card-num">TDM // 01</div>
+          <h3 class="card-title" style="color: var(--accent-primary);">Mecz Śmierci</h3>
+          <p class="card-desc" style="margin-bottom: 20px;">
+            Klasyczne starcie drużynowe. Cel jest prosty: wyeliminować jak najwięcej członków przeciwnej drużyny przed upływem czasu. Kluczem jest współpraca i komunikacja radiowa.
+          </p>
+          <div style="font-family: var(--font-hud); font-size: 0.75rem; color: var(--accent-secondary);">POZIOM TRUDNOŚCI: ŁATWY</div>
+        </div>
+        <!-- Scenario 2 -->
+        <div class="hud-card">
+          <div class="card-num">DOM // 02</div>
+          <h3 class="card-title" style="color: var(--accent-secondary);">Dominacja</h3>
+          <p class="card-desc" style="margin-bottom: 20px;">
+            Na arenie rozmieszczone są trzy punkty kontrolne (bazy). Zespół zdobywa punkty za czas, w którym bazy pozostają pod ich kontrolą. Wymaga podzielenia sił na obronę i atak.
+          </p>
+          <div style="font-family: var(--font-hud); font-size: 0.75rem; color: var(--accent-secondary);">POZIOM TRUDNOŚCI: ŚREDNI</div>
+        </div>
+        <!-- Scenario 3 -->
+        <div class="hud-card">
+          <div class="card-num">VIP // 03</div>
+          <h3 class="card-title" style="color: var(--accent-success);">Eskorta VIP-a</h3>
+          <p class="card-desc" style="margin-bottom: 20px;">
+            Jeden z graczy staje się nieuzbrojonym VIP-em o zwiększonym poziomie punktów życia. Drużyna obrońców musi eskortować go do punktu ewakuacji, podczas gdy napastnicy organizują zasadzki.
+          </p>
+          <div style="font-family: var(--font-hud); font-size: 0.75rem; color: var(--accent-secondary);">POZIOM TRUDNOŚCI: TRUDNY</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile Laser Tag Section -->
+    <section class="content-section" style="border-top: 1px solid var(--border-color); background: rgba(19, 22, 37, 0.4);">
+      <div class="section-header">
+        <span class="section-tag">MOBILNY POLIGON</span>
+        <h2 class="section-title">LASER TAG <span>U CIEBIE!</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;" class="d-md-grid-2">
+        <div class="card-img-holder" style="height: 320px;">
+          <img src="assets/media/LT1.jpg" alt="Mobilny Laser Tag">
+        </div>
+        <div>
+          <h3 class="card-title" style="font-size: 1.8rem; margin-bottom: 15px;">MOBILNE OPERACJE TERENOWE</h3>
+          <p class="card-desc" style="margin-bottom: 20px;">
+            Nie możesz dojechać do naszej bazy w Giżycku? **My przyjedziemy ze sprzętem do Ciebie!** Organizujemy w pełni bezpieczne rozgrywki na świeżym powietrzu, w lasach, na boiskach szkolnych lub halach sportowych.
+          </p>
+          <ul style="list-style-type: none; font-family: var(--font-hud); font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 10px;">
+            <li>🔸 Profesjonalne dmuchane przeszkody taktyczne</li>
+            <li>🔸 Bezpieczny system laserowy dla graczy w każdym wieku</li>
+            <li>🔸 Doświadczeni instruktorzy czuwający nad przebiegiem misji</li>
+            <li>🔸 Dowolna lokalizacja na terenie Mazur</li>
+          </ul>
+          <a href="kontakt.html" class="btn-hud btn-hud-orange" style="display: inline-block; margin-top: 30px; text-decoration: none;">Zamów Mobilną Bazę</a>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Mobile bottom nav -->
   <nav class="bottom-nav">
     <a href="index.html">
       <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -69,6 +208,93 @@
       <span>Kontakt</span>
     </a>
   </nav>
+
+  <!-- Interactive JavaScript for Classes Customizer -->
+  <script>
+    const classes = {
+      assault: {
+        name: 'Szturmowiec',
+        role: 'Zrównoważony Atak // Karabinek Laserowy X-12',
+        desc: 'Uniwersalna klasa przeznaczona do walki na średnich dystansach. Wyposażona w karabinek o średniej sile ognia i dużej szybkostrzelności. Idealna do przejmowania punktów i dynamicznej ofensywy.',
+        fire: '80%',
+        range: '65%',
+        ammo: '75%',
+        hp: '100 HP'
+      },
+      sniper: {
+        name: 'Snajper',
+        role: 'Eliminacja Dystansowa // Karabin Laserowy L-99',
+        desc: 'Wysoka precyzja i ogromny zasięg kosztem mniejszej szybkostrzelności. Klasa doskonała dla graczy lubiących trzymać dystans, obserwować pole bitwy z wieży i likwidować cele z daleka.',
+        fire: '30%',
+        range: '100%',
+        ammo: '40%',
+        hp: '80 HP'
+      },
+      medic: {
+        name: 'Medyk / Support',
+        role: 'Leczenie i Odnowienie // Karabinek R-42 + Moduł Pola',
+        desc: 'Kluczowe wsparcie dla całego teamu. Medyk posiada zdolność zdalnego leczenia/przywracania punktów życia swoim sojusznikom na odległość. Niezastąpiony podczas długich operacji taktycznych.',
+        fire: '60%',
+        range: '50%',
+        ammo: '90%',
+        hp: '120 HP'
+      },
+      heavy: {
+        name: 'Ciężkie Wsparcie',
+        role: 'Obrona Sektora // CKM G-20 + Pancerna Kamizelka',
+        desc: 'Ogromna pula zdrowia (HP) i nieskończona amunicja w magazynku. Klasa powolna, ale idealna do zaporowej obrony baz i korytarzy, przyjmująca na siebie najwięcej ognia nieprzyjaciela.',
+        fire: '90%',
+        range: '45%',
+        ammo: '100%',
+        hp: '160 HP'
+      }
+    };
+
+    function selectClass(classKey, element) {
+      // Remove active classes
+      document.querySelectorAll('.class-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // Add active to current button
+      element.classList.add('active');
+      
+      // Update displays
+      const selected = classes[classKey];
+      document.getElementById('display-name').innerText = selected.name;
+      document.getElementById('display-role').innerText = selected.role;
+      document.getElementById('display-desc').innerText = selected.desc;
+      
+      document.getElementById('stat-fire').innerText = selected.fire;
+      document.getElementById('bar-fire').style.width = selected.fire;
+      
+      document.getElementById('stat-range').innerText = selected.range;
+      document.getElementById('bar-range').style.width = selected.range;
+      
+      document.getElementById('stat-ammo').innerText = selected.ammo;
+      document.getElementById('bar-ammo').style.width = selected.ammo;
+      
+      document.getElementById('stat-hp').innerText = selected.hp;
+      const hpVal = parseInt(selected.hp);
+      document.getElementById('bar-hp').style.width = (hpVal / 180 * 100) + '%';
+    }
+  </script>
+
+  <style>
+    .d-md-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) {
+      .d-md-grid-2 {
+        grid-template-columns: 1fr 1.2fr;
+      }
+    }
+  </style>
+
+  <footer>
+    <p>&copy; 2026 LASER TAG TACTICAL ARENA GIŻYCKO. BASE_COMMAND // ALL RIGHTS RESERVED.</p>
+  </footer>
 
 </body>
 </html>
