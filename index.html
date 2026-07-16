@@ -51,9 +51,8 @@
         <a href="tel:+48662797059" class="text-accent" style="font-family: var(--font-header); font-size: 2.5rem; font-weight: 900; letter-spacing: 0.05em; text-decoration: none; display: block; margin-bottom: 30px; text-shadow: var(--laser-glow);">
           +48 662 797 059
         </a>
-        <div class="btn-hud-container">
-          <a href="#booking-section" class="btn-hud btn-hud-orange">Formularz rezerwacji</a>
-          <a href="kontakt.html" class="btn-hud btn-hud-cyan">Napisz do nas</a>
+        <div class="btn-hud-container" style="justify-content: center;">
+          <a href="kontakt.html" class="btn-hud btn-hud-orange" style="padding: 16px 48px; font-size: 1.1rem;">Napisz do nas</a>
         </div>
       </div>
     </section>
@@ -99,102 +98,6 @@
             Stawcie się w bazie 15 minut przed czasem na szkolenie z obsługi karabinków i zasad bezpieczeństwa. Czas na pole walki!
           </p>
         </div>
-      </div>
-    </section>
-
-    <!-- Interactive Booking Form Section -->
-    <section id="booking-section" class="content-section" style="padding: 60px 0;">
-      <div class="section-header">
-        <span class="section-tag" style="color: var(--accent-primary);">FORMULARZ REZERWACJI</span>
-        <h2 class="section-title">ZAMÓW <span>ROZGRYWKĘ</span></h2>
-        <div class="section-divider"></div>
-      </div>
-
-      <div class="hud-panel" style="max-width: 750px; margin: 40px auto 0 auto; padding: 35px;">
-        <p style="text-align: center; margin-bottom: 30px; font-size: 0.95rem; color: var(--text-secondary);">
-          Wypełnij krótki formularz, aby zarezerwować termin. Nasz zespół skontaktuje się telefonicznie w celu potwierdzenia rezerwacji i omówienia szczegółów bazy.
-        </p>
-
-        <form id="arena-booking-form" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
-          
-          <!-- Row 1: Name & Phone -->
-          <div class="d-md-grid-2" style="grid-template-columns: 1fr 1fr; gap: 20px; display: grid;">
-            <div>
-              <label style="display: block; font-family: var(--font-header); font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 8px; color: var(--text-secondary);">IMIĘ I NAZWISKO</label>
-              <input type="text" id="form-name" required placeholder="np. Jan Kowalski" style="width: 100%; padding: 12px 16px; border-radius: var(--radius-default); border: 1px solid var(--border-ghost); background: var(--bg-surface-elevated); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem;">
-            </div>
-            <div>
-              <label style="display: block; font-family: var(--font-header); font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 8px; color: var(--text-secondary);">NUMER TELEFONU</label>
-              <input type="tel" id="form-phone" required placeholder="np. +48 600 700 800" style="width: 100%; padding: 12px 16px; border-radius: var(--radius-default); border: 1px solid var(--border-ghost); background: var(--bg-surface-elevated); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem;">
-            </div>
-          </div>
-
-          <!-- Row 2: Date & Time -->
-          <div class="d-md-grid-2" style="grid-template-columns: 1fr 1fr; gap: 20px; display: grid;">
-            <div>
-              <label style="display: block; font-family: var(--font-header); font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 8px; color: var(--text-secondary);">DATA GRY</label>
-              <input type="date" id="form-date" required style="width: 100%; padding: 12px 16px; border-radius: var(--radius-default); border: 1px solid var(--border-ghost); background: var(--bg-surface-elevated); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem;">
-            </div>
-            <div>
-              <label style="display: block; font-family: var(--font-header); font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 8px; color: var(--text-secondary);">GODZINA GRY</label>
-              <input type="time" id="form-time" required style="width: 100%; padding: 12px 16px; border-radius: var(--radius-default); border: 1px solid var(--border-ghost); background: var(--bg-surface-elevated); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem;">
-            </div>
-          </div>
-
-          <!-- Row 3: Players & Package -->
-          <div class="d-md-grid-2" style="grid-template-columns: 1fr 1fr; gap: 20px; display: grid;">
-            <div>
-              <label style="display: block; font-family: var(--font-header); font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 8px; color: var(--text-secondary);">SZACOWANA LICZBA GRACZY</label>
-              <select id="form-players" style="width: 100%; padding: 12px 16px; border-radius: var(--radius-default); border: 1px solid var(--border-ghost); background: var(--bg-surface-elevated); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem;">
-                <option value="4-6">4 - 6 graczy</option>
-                <option value="7-10">7 - 10 graczy</option>
-                <option value="11-15">11 - 15 graczy</option>
-                <option value="16-20">16 - 20 graczy</option>
-                <option value="21+">21+ graczy</option>
-              </select>
-            </div>
-            <div>
-              <label style="display: block; font-family: var(--font-header); font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 8px; color: var(--text-secondary);">WYBIERZ PAKIET</label>
-              <select id="form-package" style="width: 100%; padding: 12px 16px; border-radius: var(--radius-default); border: 1px solid var(--border-ghost); background: var(--bg-surface-elevated); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem;">
-                <option value="S">Pakiet Rekrut S (200 zł)</option>
-                <option value="M">Pakiet Wojownik M (350 zł)</option>
-                <option value="L">Pakiet Weteran L (500 zł)</option>
-                <option value="Plener">Rozgrywka w Plenerze (Indywidualnie)</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Row 4: Additional checkboxes -->
-          <div>
-            <label style="display: block; font-family: var(--font-header); font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 12px; color: var(--text-secondary);">OPCJE DODATKOWE</label>
-            <div style="display: flex; flex-direction: column; gap: 10px;">
-              <label style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--text-secondary); cursor: pointer;">
-                <input type="checkbox" id="opt-fire" value="Ognisko" style="accent-color: var(--accent-primary); width: 18px; height: 18px;">
-                Ognisko z kiełbaskami (+150 zł)
-              </label>
-              <label style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--text-secondary); cursor: pointer;">
-                <input type="checkbox" id="opt-hour" value="Dodatkowa godzina" style="accent-color: var(--accent-primary); width: 18px; height: 18px;">
-                Dodatkowa godzina gry (+100 zł)
-              </label>
-              <label style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--text-secondary); cursor: pointer;">
-                <input type="checkbox" id="opt-animator" value="Animator" style="accent-color: var(--accent-primary); width: 18px; height: 18px;">
-                Dedykowany instruktor/animator prowadzący gry scenariuszowe (+100 zł)
-              </label>
-            </div>
-          </div>
-
-          <!-- Message -->
-          <div>
-            <label style="display: block; font-family: var(--font-header); font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 8px; color: var(--text-secondary);">UWAGI LUB PYTANIA</label>
-            <textarea id="form-msg" rows="4" placeholder="Wpisz swoje uwagi..." style="width: 100%; padding: 12px 16px; border-radius: var(--radius-default); border: 1px solid var(--border-ghost); background: var(--bg-surface-elevated); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem; resize: none;"></textarea>
-          </div>
-
-          <!-- Submit Button -->
-          <div style="text-align: center; margin-top: 10px;">
-            <button type="submit" class="btn-hud btn-hud-orange" style="width: 100%; padding: 16px 0; font-size: 1rem;">Wyślij Zgłoszenie Rezerwacji</button>
-          </div>
-
-        </form>
       </div>
     </section>
 
