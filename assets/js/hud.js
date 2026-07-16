@@ -609,11 +609,13 @@ function initBookingCalculator() {
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   buildSettingsHUD();
+  initBgCanvas();
   initClassConfigurator();
   initFAQ();
   initGalleryLightbox();
   initSoundHooks();
   initBookingCalculator();
+  initArenaBookingForm();
   
   // Booking page normal submit override (for regular forms)
   const contactForm = document.getElementById('booking-contact-form');
@@ -634,6 +636,135 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// --- DYNAMIC BACKGROUND CANVAS ENGINE (Smoke & Lasers) ---
+function initBgCanvas() {
+  let canvas = document.getElementById('bg-canvas');
+  if (!canvas) {
+    canvas = document.createElement('canvas');
+    canvas.id = 'bg-canvas';
+    document.body.appendChild(canvas);
+  }
+
+  const ctx = canvas.getContext('2d');
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+
+  // Smoke particles definition
+  const particles = [];
+  const particleCount = 20;
+  for (let i = 0; i < particleCount; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      radius: Math.random() * 150 + 100,
+      alpha: Math.random() * 0.1 + 0.05
+    });
+  }
+
+  // Laser dots definition (for night mode)
+  const lasers = [
+    { x: Math.random() * width, y: Math.random() * height, tx: Math.random() * width, ty: Math.random() * height, color: 'rgba(255, 0, 127, 0.35)', dotColor: '#ff007f', speed: 0.005, size: 4 },
+    { x: Math.random() * width, y: Math.random() * height, tx: Math.random() * width, ty: Math.random() * height, color: 'rgba(57, 255, 20, 0.35)', dotColor: '#39ff14', speed: 0.003, size: 5 },
+    { x: Math.random() * width, y: Math.random() * height, tx: Math.random() * width, ty: Math.random() * height, color: 'rgba(0, 240, 255, 0.35)', dotColor: '#00f0ff', speed: 0.004, size: 4 }
+  ];
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    const isDay = document.body.classList.contains('theme-day');
+
+    // 1. Draw Smoke Particles
+    particles.forEach(p => {
+      // Move particles
+      p.x += p.vx;
+      p.y += p.vy;
+
+      // Wrap around screen edges
+      if (p.x < -p.radius) p.x = width + p.radius;
+      if (p.x > width + p.radius) p.x = -p.radius;
+      if (p.y < -p.radius) p.y = height + p.radius;
+      if (p.y > height + p.radius) p.y = -p.radius;
+
+      // Draw gradient
+      const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
+      if (isDay) {
+        // Light grey-blue smoke for day mode
+        grad.addColorStop(0, `rgba(210, 220, 235, ${p.alpha * 0.7})`);
+        grad.addColorStop(1, 'rgba(210, 220, 235, 0)');
+      } else {
+        // Dark blue-purple smoke for night mode
+        grad.addColorStop(0, `rgba(30, 35, 60, ${p.alpha * 0.8})`);
+        grad.addColorStop(1, 'rgba(30, 35, 60, 0)');
+      }
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    // 2. Draw Lasers (NIGHT MODE ONLY)
+    if (!isDay) {
+      lasers.forEach(l => {
+        // Interpolate position towards target
+        l.x += (l.tx - l.x) * l.speed;
+        l.y += (l.ty - l.y) * l.speed;
+
+        // If close to target, select a new target
+        if (Math.abs(l.x - l.tx) < 10 && Math.abs(l.y - l.ty) < 10) {
+          l.tx = Math.random() * width;
+          l.ty = Math.random() * height;
+        }
+
+        // Draw laser line (starting from offscreen / or fixed points like top corners)
+        ctx.strokeStyle = l.color;
+        ctx.lineWidth = 1;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = l.dotColor;
+        
+        ctx.beginPath();
+        // Each laser originates from a different corner to simulate real shooters from different spots
+        if (l.color.includes('255, 0, 127')) {
+          ctx.moveTo(0, 0); // Pink laser from top-left
+        } else if (l.color.includes('57, 255')) {
+          ctx.moveTo(width, 0); // Green laser from top-right
+        } else {
+          ctx.moveTo(width / 2, height); // Cyan laser from center bottom
+        }
+        ctx.lineTo(l.x, l.y);
+        ctx.stroke();
+
+        // Draw aiming dot (pulsing)
+        const pulse = Math.sin(Date.now() * 0.01) * 3 + l.size;
+        ctx.fillStyle = l.dotColor;
+        ctx.beginPath();
+        ctx.arc(l.x, l.y, pulse, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw secondary outer ring
+        ctx.strokeStyle = l.color;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(l.x, l.y, pulse * 2, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Reset shadow
+        ctx.shadowBlur = 0;
+      });
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  // Start loop
+  requestAnimationFrame(draw);
+}
 
 // --- GLOBAL SVG MAP ZONE SELECTOR ---
 window.selectZone = function(id, title, desc) {
@@ -692,5 +823,54 @@ window.selectEvent = function(key, btnElement) {
     if (descEl) descEl.innerHTML = selected.desc;
   }
 };
+
+// --- ARENA BOOKING FORM SUBMISSION ENGINE ---
+function initArenaBookingForm() {
+  const form = document.getElementById('arena-booking-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('form-name').value;
+      const phone = document.getElementById('form-phone').value;
+      const date = document.getElementById('form-date').value;
+      const time = document.getElementById('form-time').value;
+      const players = document.getElementById('form-players').value;
+      const packageSelected = document.getElementById('form-package').value;
+      
+      const optionsList = [];
+      if (document.getElementById('opt-fire').checked) optionsList.push("Ognisko");
+      if (document.getElementById('opt-hour').checked) optionsList.push("Dodatkowa godzina");
+      if (document.getElementById('opt-animator').checked) optionsList.push("Animator");
+      
+      const msg = document.getElementById('form-msg').value;
+
+      playLaserSound();
+      
+      // Calculate estimated price
+      let basePrice = 200;
+      if (packageSelected === 'M') basePrice = 350;
+      if (packageSelected === 'L') basePrice = 500;
+      if (packageSelected === 'Plener') basePrice = 400; // default plener
+
+      let extraPrice = 0;
+      if (document.getElementById('opt-fire').checked) extraPrice += 150;
+      if (document.getElementById('opt-hour').checked) extraPrice += 100;
+      if (document.getElementById('opt-animator').checked) extraPrice += 100;
+
+      const totalPrice = basePrice + extraPrice;
+      
+      // Open our modern checkout modal with all calculated details
+      openCheckout({
+        package: `Pakiet ${packageSelected} (Gra na Arenie)`,
+        players: `${players} graczy (Zgłaszający: ${name})`,
+        duration: `Termin: ${date} o godz. ${time}`,
+        price: totalPrice
+      });
+      
+      console.log("Rezerwacja zgłoszona:", { name, phone, date, time, players, packageSelected, optionsList, msg, totalPrice });
+    });
+  }
+}
 
 
