@@ -1221,129 +1221,158 @@ body.theme-day th {
 }
 
 body.theme-day .hud-panel {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  background: #ffffff !important;
+  border-color: var(--border-ghost) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.theme-day section,
+body.theme-day section.content-section {
+  background: var(--bg-dark) !important;
+  background-color: var(--bg-dark) !important;
+  border-color: var(--border-ghost) !important;
 }
 
 body.theme-day .hud-card {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  color: var(--text-secondary);
+  background: #ffffff !important;
+  border-color: var(--border-ghost) !important;
+  color: var(--text-primary) !important;
 }
 
 body.theme-day .hud-card:hover {
-  background: #ffffff;
-  border-color: var(--accent-primary);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  background: #ffffff !important;
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06) !important;
+}
+
+body.theme-day .card-title,
+body.theme-day .section-title,
+body.theme-day h1,
+body.theme-day h2,
+body.theme-day h3,
+body.theme-day h4,
+body.theme-day h5,
+body.theme-day h6 {
+  color: var(--text-primary) !important;
+  text-shadow: none !important;
+}
+
+body.theme-day p,
+body.theme-day span,
+body.theme-day li,
+body.theme-day ul,
+body.theme-day td,
+body.theme-day th,
+body.theme-day .card-desc {
+  color: var(--text-secondary) !important;
+  text-shadow: none !important;
+}
+
+body.theme-day .text-accent {
+  color: var(--accent-primary) !important;
+  text-shadow: none !important;
+}
+
+body.theme-day .btn-hud-orange {
+  background: var(--accent-primary) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(var(--accent-primary-rgb), 0.2) !important;
+}
+
+body.theme-day .btn-hud-orange:hover {
+  background: #b82323 !important;
+  box-shadow: 0 6px 18px rgba(var(--accent-primary-rgb), 0.3) !important;
+}
+
+body.theme-day .btn-hud-cyan {
+  background: #ffffff !important;
+  border: 1px solid var(--accent-secondary) !important;
+  color: var(--text-primary) !important;
+  box-shadow: none !important;
+}
+
+body.theme-day .btn-hud-cyan:hover {
+  background: var(--accent-secondary) !important;
+  color: #ffffff !important;
+}
+
+body.theme-day .desktop-menu {
+  background: #ffffff !important;
+  border-color: var(--border-ghost) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.theme-day .desktop-menu a {
+  color: var(--text-secondary) !important;
+}
+
+body.theme-day .desktop-menu a:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-primary) !important;
+}
+
+body.theme-day .desktop-menu a.active {
+  background: var(--accent-primary) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body.theme-day .bottom-nav {
+  background: #ffffff !important;
+  border-top: 1px solid var(--border-ghost) !important;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.theme-day .bottom-nav a {
+  color: var(--text-secondary) !important;
+}
+
+body.theme-day .bottom-nav a.active {
+  color: var(--accent-primary) !important;
 }
 
 body.theme-day .customizer-box,
 body.theme-day .calc-container {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-body.theme-day td {
-  color: var(--text-secondary) !important;
-}
-
-body.theme-day tr {
-  border-bottom-color: rgba(0, 0, 0, 0.1) !important;
-}
-
-body.theme-day a {
-  color: var(--accent-primary);
-}
-
-body.theme-day .bottom-nav {
-  background: rgba(255, 255, 255, 0.95);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.05);
-}
-
-body.theme-day .bottom-nav a {
-  color: var(--text-secondary);
-}
-
-body.theme-day .bottom-nav a.active {
-  color: var(--accent-primary);
-}
-
-body.theme-day .tactical-form input,
-body.theme-day .tactical-form textarea,
-body.theme-day .tactical-form select,
-body.theme-day .form-input {
   background: #ffffff !important;
-  border: 1px solid rgba(0, 0, 0, 0.15) !important;
-  color: var(--text-primary) !important;
+  border-color: var(--border-ghost) !important;
 }
 
 body.theme-day .calc-btn-option {
-  background: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: var(--text-secondary);
+  background: #ffffff !important;
+  border: 1px solid var(--border-ghost) !important;
+  color: var(--text-secondary) !important;
 }
 
 body.theme-day .calc-btn-option.active {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: #ffffff;
+  background: var(--accent-primary) !important;
+  border-color: var(--accent-primary) !important;
+  color: #ffffff !important;
 }
 
 body.theme-day .class-btn {
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: var(--text-secondary);
+  background: #ffffff !important;
+  border: 1px solid var(--border-ghost) !important;
+  color: var(--text-secondary) !important;
 }
 
 body.theme-day .class-btn.active {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: #ffffff;
-}
-
-/* SOCIAL FOOTER */
-.footer-social {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 15px;
-  margin-bottom: 25px;
-}
-
-.social-icon-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid var(--border-ghost);
-  background: var(--bg-surface);
-  color: var(--text-secondary);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.social-icon-btn:hover {
-  border-color: var(--accent-primary);
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: var(--laser-glow);
+  background: var(--accent-primary) !important;
+  border-color: var(--accent-primary) !important;
+  color: #ffffff !important;
 }
 
 body.theme-day .social-icon-btn {
-  background: #ffffff;
-  border-color: rgba(0, 0, 0, 0.1);
-  color: var(--text-secondary);
+  background: #ffffff !important;
+  border-color: var(--border-ghost) !important;
+  color: var(--text-secondary) !important;
+  box-shadow: none !important;
 }
 
 body.theme-day .social-icon-btn:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-color: var(--accent-primary) !important;
+  color: var(--accent-primary) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
 }
 
 .social-icon-btn svg {
