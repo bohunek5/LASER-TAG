@@ -1233,6 +1233,16 @@ body.theme-day section.content-section {
   border-color: var(--border-ghost) !important;
 }
 
+body.theme-day a {
+  color: var(--accent-primary) !important;
+  transition: all 0.2s ease;
+}
+
+body.theme-day a:hover {
+  color: #b82323 !important;
+  text-decoration: underline;
+}
+
 body.theme-day .hud-card {
   background: #ffffff !important;
   border-color: var(--border-ghost) !important;
