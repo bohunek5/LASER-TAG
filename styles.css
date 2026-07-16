@@ -189,7 +189,7 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 110px;
+  height: 135px;
   z-index: 1000;
   background: rgba(var(--bg-dark), 0.75);
   border-bottom: 1px solid var(--border-ghost);
@@ -206,11 +206,13 @@ body::after {
 }
 
 .top-nav .logo img {
-  height: 95px;
+  height: 115px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 main {
-  padding-top: 110px !important;
+  padding-top: 135px !important;
 }
 
 /* DESKTOP NAV */
@@ -224,7 +226,7 @@ main {
     justify-content: center;
     gap: 6px;
     position: fixed;
-    top: 95px;
+    top: 120px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -918,15 +920,15 @@ footer {
 /* MOBILE OVERRIDES */
 @media (max-width: 991.98px) {
   .top-nav {
-    height: 85px;
+    height: 105px;
   }
   
   .top-nav .logo img {
-    height: 70px;
+    height: 85px;
   }
   
   main {
-    padding-top: 85px !important;
+    padding-top: 105px !important;
   }
   
   section.content-section {
@@ -1192,4 +1194,105 @@ footer {
   .d-md-grid-2-alt {
     grid-template-columns: 0.9fr 1.1fr !important;
   }
+}
+
+/* --- WCAG 2.1 CONTRAST & DAY MODE ACCESSIBILITY OVERRIDES --- */
+body.theme-day h1,
+body.theme-day h2,
+body.theme-day h3,
+body.theme-day h4,
+body.theme-day h5,
+body.theme-day h6,
+body.theme-day .card-title,
+body.theme-day .class-name,
+body.theme-day .section-title,
+body.theme-day .hud-title,
+body.theme-day .checkout-title,
+body.theme-day .calc-label,
+body.theme-day th {
+  color: var(--text-primary) !important;
+  text-shadow: none !important;
+}
+
+body.theme-day .hud-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-day .hud-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: var(--text-secondary);
+}
+
+body.theme-day .hud-card:hover {
+  background: #ffffff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+body.theme-day .customizer-box,
+body.theme-day .calc-container {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+body.theme-day td {
+  color: var(--text-secondary) !important;
+}
+
+body.theme-day tr {
+  border-bottom-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+body.theme-day a {
+  color: var(--accent-primary);
+}
+
+body.theme-day .bottom-nav {
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.05);
+}
+
+body.theme-day .bottom-nav a {
+  color: var(--text-secondary);
+}
+
+body.theme-day .bottom-nav a.active {
+  color: var(--accent-primary);
+}
+
+body.theme-day .tactical-form input,
+body.theme-day .tactical-form textarea,
+body.theme-day .tactical-form select,
+body.theme-day .form-input {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  color: var(--text-primary) !important;
+}
+
+body.theme-day .calc-btn-option {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-secondary);
+}
+
+body.theme-day .calc-btn-option.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+body.theme-day .class-btn {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-secondary);
+}
+
+body.theme-day .class-btn.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #ffffff;
 }
