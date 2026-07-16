@@ -1390,3 +1390,125 @@ body.theme-day .social-icon-btn:hover {
   z-index: -3;
   pointer-events: none;
 }
+
+/* TACTICAL MAP STYLING */
+.tactical-map-container {
+  background: #0d1122 !important;
+  border: 1px solid rgba(0, 229, 255, 0.25) !important;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+  transition: all 0.3s ease;
+}
+
+.map-grid-pattern {
+  stroke: rgba(0, 229, 255, 0.08) !important;
+}
+
+.map-boundary {
+  stroke: rgba(0, 229, 255, 0.3) !important;
+  stroke-dasharray: 6 4;
+  animation: boundaryPulse 4s infinite linear;
+}
+
+.map-obstacle {
+  fill: #191f36 !important;
+  stroke: rgba(0, 229, 255, 0.25) !important;
+  stroke-width: 1.5;
+}
+
+.map-spawn-a {
+  fill: rgba(0, 229, 255, 0.04) !important;
+  stroke: var(--accent-secondary) !important;
+  stroke-width: 2;
+}
+
+.map-spawn-b {
+  fill: rgba(255, 43, 43, 0.04) !important;
+  stroke: var(--accent-primary) !important;
+  stroke-width: 2;
+}
+
+.map-text {
+  font-family: 'Orbitron', var(--font-header);
+  font-weight: 700;
+  fill: #a0aec0 !important;
+  letter-spacing: 0.05em;
+}
+
+.map-point text {
+  font-family: 'Orbitron', var(--font-header);
+  font-weight: 700;
+  fill: #ffffff !important;
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.map-point:hover text {
+  fill: var(--accent-primary) !important;
+}
+
+.pulse-circle {
+  animation: pulseRadar 2s infinite ease-out;
+  transform-origin: center;
+}
+
+/* Day mode tactical map overrides */
+body.theme-day .tactical-map-container {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.theme-day .map-grid-pattern {
+  stroke: rgba(0, 0, 0, 0.06) !important;
+}
+
+body.theme-day .map-boundary {
+  stroke: rgba(217, 43, 43, 0.25) !important;
+}
+
+body.theme-day .map-obstacle {
+  fill: #f0f2f5 !important;
+  stroke: rgba(0, 0, 0, 0.18) !important;
+}
+
+body.theme-day .map-spawn-a {
+  fill: rgba(0, 229, 255, 0.02) !important;
+  stroke: var(--accent-secondary) !important;
+}
+
+body.theme-day .map-spawn-b {
+  fill: rgba(217, 43, 43, 0.02) !important;
+  stroke: var(--accent-primary) !important;
+}
+
+body.theme-day .map-text {
+  fill: #4a5568 !important;
+}
+
+body.theme-day .map-point text {
+  fill: #2d3748 !important;
+}
+
+body.theme-day .map-point:hover text {
+  fill: var(--accent-primary) !important;
+}
+
+@keyframes boundaryPulse {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 20; }
+}
+
+@keyframes pulseRadar {
+  0% {
+    r: 6;
+    opacity: 0.8;
+  }
+  100% {
+    r: 20;
+    opacity: 0;
+  }
+}
