@@ -1296,3 +1296,52 @@ body.theme-day .class-btn.active {
   border-color: var(--accent-primary);
   color: #ffffff;
 }
+
+/* SOCIAL FOOTER */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.social-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--border-ghost);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.social-icon-btn:hover {
+  border-color: var(--accent-primary);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: var(--laser-glow);
+}
+
+body.theme-day .social-icon-btn {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: var(--text-secondary);
+}
+
+body.theme-day .social-icon-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.social-icon-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}

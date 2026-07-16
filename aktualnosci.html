@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aktualności - Laser Tag Giżycko Tactical Arena</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="aktualnosci">
+
+  <!-- Glow Backgrounds -->
+  <div class="bg-glow-orange"></div>
+  <div class="bg-glow-emerald"></div>
+
+  <!-- Top Nav -->
+  <nav class="top-nav">
+    <div class="line left-line"></div>
+    <div class="logo">
+      <img src="assets/media/LOGO%20LT.jpg" alt="Laser Tag Logo">
+    </div>
+    <div class="line right-line"></div>
+  </nav>
+
+  <!-- Desktop menu -->
+  <div class="desktop-menu">
+    <a href="index.html">Start</a>
+    <a href="oferta.html">Oferta</a>
+    <a href="cennik.html">Cennik</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="regulamin.html">Regulamin</a>
+    <a href="aktualnosci.html" class="active">Aktualności</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+
+  <main style="padding-top: 135px;">
+    
+    <!-- Header Hero -->
+    <section class="hero" style="height: 50vh; min-height: 350px;">
+      <div class="video-overlay"></div>
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="assets/media/woman-holding-laser-gun-in-dark-arena-2025-12-17-16-36-59-utc.mov" type="video/mp4">
+      </video>
+      <div class="hud-panel">
+        <h1 class="hud-title">WIEŚCI Z <span>ARENY</span></h1>
+        <p class="hud-desc" style="margin-bottom: 0;">
+          Najnowsze informacje, wydarzenia, promocje urodzinowe i relacje z turniejów na arenie w Giżycku.
+        </p>
+      </div>
+    </section>
+
+    <!-- News Feed -->
+    <section class="content-section">
+      <div class="section-header">
+        <span class="section-tag">BIULETYN INFORMACYJNY</span>
+        <h2 class="section-title">OSTATNIE <span>AKTUALNOŚCI</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="hud-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+        
+        <!-- Post 1 -->
+        <div class="hud-card">
+          <div class="card-img-holder" style="height: 220px;">
+            <img src="assets/media/LT4.jpg" alt="Nowy sprzęt celowniczy">
+          </div>
+          <span style="font-family: var(--font-hud); font-size: 0.75rem; color: var(--accent-primary); display:block; margin-bottom:10px;">Opublikowano: 10 Lipca 2026</span>
+          <h3 class="card-title" style="font-size:1.3rem;">Nowy Sprzęt Celowniczy Już Dostępny!</h3>
+          <p class="card-desc" style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 15px;">
+            Wzbogaciliśmy nasz arsenał o nowoczesne, lżejsze kolimatory laserowe idealne dla najmłodszych graczy. Poprawiają one precyzję strzału i sprawiają, że nawet kilkugodzinna zabawa jest w pełni komfortowa dla rekrutów od 7 roku życia.
+          </p>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="hud-card">
+          <div class="card-img-holder" style="height: 220px;">
+            <img src="assets/media/LT3.jpg" alt="Promocja urodzinowa">
+          </div>
+          <span style="font-family: var(--font-hud); font-size: 0.75rem; color: var(--accent-secondary); display:block; margin-bottom:10px;">Opublikowano: 28 Czerwca 2026</span>
+          <h3 class="card-title" style="font-size:1.3rem; color: var(--accent-secondary);">Letnie Promocje na Imprezy Urodzinowe</h3>
+          <p class="card-desc" style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 15px;">
+            Planujesz urodziny dla swojego dziecka w wakacje? Zarezerwuj dowolny pakiet (S, M lub L) od poniedziałku do czwartku, a otrzymasz darmowy zestaw upominkowy oraz pamiątkowe medale dla wszystkich uczestników gry!
+          </p>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="hud-card">
+          <div class="card-img-holder" style="height: 220px;">
+            <img src="assets/media/LT6.jpg" alt="Turniej laser tag">
+          </div>
+          <span style="font-family: var(--font-hud); font-size: 0.75rem; color: var(--accent-success); display:block; margin-bottom:10px;">Opublikowano: 15 Czerwca 2026</span>
+          <h3 class="card-title" style="font-size:1.3rem; color: var(--accent-success);">Otwarty Turniej Drużynowy - Zapisy</h3>
+          <p class="card-desc" style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 15px;">
+            Zbierz drużynę i weź udział w letnich rozgrywkach o Puchar Areny Giżycko! Rywalizacja odbędzie się w trybie „Dominacji” na mapie taktycznej bazy. Zgłoszenia przyjmujemy telefonicznie do końca miesiąca. Liczba miejsc ograniczona!
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Mobile bottom nav -->
+  <nav class="bottom-nav">
+    <a href="index.html">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      <span>Start</span>
+    </a>
+    <a href="oferta.html">
+      <svg viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.87L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM3 21.5h8v-8H3v8zm2-6h4v4H5v-4z"/></svg>
+      <span>Oferta</span>
+    </a>
+    <a href="cennik.html">
+      <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+      <span>Cennik</span>
+    </a>
+    <a href="kontakt.html">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <span>Kontakt</span>
+    </a>
+  </nav>
+
+  <!-- Interactive JavaScript -->
+  <script src="assets/js/hud.js"></script>
+
+  <footer>
+    <p>&copy; 2026 LASER TAG TACTICAL ARENA GIŻYCKO. BASE_COMMAND // ALL RIGHTS RESERVED.</p>
+  </footer>
+
+</body>
+</html>
