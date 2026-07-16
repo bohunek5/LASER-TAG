@@ -9,8 +9,8 @@
 <body data-page="galeria">
 
   <!-- Glow Backgrounds -->
-  <div class="grid-glow"></div>
-  <div class="grid-glow-alt"></div>
+  <div class="bg-glow-orange"></div>
+  <div class="bg-glow-emerald"></div>
 
   <!-- Top Nav -->
   <nav class="top-nav">
@@ -201,69 +201,8 @@
     </a>
   </nav>
 
-  <!-- Interactive JavaScript for Lightbox -->
-  <script>
-    function openLightbox(src, title) {
-      const lightbox = document.getElementById('lightbox');
-      const img = document.getElementById('lightbox-img');
-      const caption = document.getElementById('lightbox-caption');
-      
-      img.src = src;
-      caption.innerText = title;
-      lightbox.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Disable page scrolling
-    }
-
-    function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
-      document.body.style.overflow = 'auto'; // Enable page scrolling
-    }
-  </script>
-
-  <!-- Style Additions for Lightbox -->
-  <style>
-    /* Lightbox Modal */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      inset: 0;
-      background: rgba(7, 8, 12, 0.95);
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 30px;
-      right: 40px;
-      color: #fff;
-      font-size: 3rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: color 0.3s;
-      user-select: none;
-    }
-    .lightbox-close:hover {
-      color: var(--accent-primary);
-    }
-    .lightbox-content {
-      max-width: 85%;
-      max-height: 75%;
-      border: 1px solid var(--accent-primary);
-      box-shadow: 0 0 30px rgba(var(--accent-primary-rgb), 0.4);
-      clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
-    }
-    .lightbox-caption {
-      margin-top: 20px;
-      color: #fff;
-      font-family: var(--font-hud);
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      text-shadow: 0 0 10px rgba(255, 87, 34, 0.3);
-    }
-  </style>
+  <!-- Interactive JavaScript -->
+  <script src="assets/js/hud.js"></script>
 
   <footer>
     <p>&copy; 2026 LASER TAG TACTICAL ARENA GIŻYCKO. BASE_COMMAND // ALL RIGHTS RESERVED.</p>

@@ -9,8 +9,8 @@
 <body data-page="kontakt">
 
   <!-- Glow Backgrounds -->
-  <div class="grid-glow"></div>
-  <div class="grid-glow-alt"></div>
+  <div class="bg-glow-orange"></div>
+  <div class="bg-glow-emerald"></div>
 
   <!-- Top Nav -->
   <nav class="top-nav">
@@ -177,38 +177,8 @@
     </a>
   </nav>
 
-  <!-- Interactive JavaScript for FAQ Accordion -->
-  <script>
-    function toggleFaq(element) {
-      // Toggle active class
-      const isActive = element.classList.contains('active');
-      
-      // Close all first
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-        item.querySelector('.faq-a').style.maxHeight = null;
-      });
-      
-      // Open selected if it wasn't already open
-      if (!isActive) {
-        element.classList.add('active');
-        const answer = element.querySelector('.faq-a');
-        answer.style.maxHeight = answer.scrollHeight + "px";
-      }
-    }
-  </script>
-
-  <style>
-    .d-md-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width: 768px) {
-      .d-md-grid-2 {
-        grid-template-columns: 0.8fr 1.2fr;
-      }
-    }
-  </style>
+  <!-- Interactive JavaScript -->
+  <script src="assets/js/hud.js"></script>
 
   <footer>
     <p>&copy; 2026 LASER TAG TACTICAL ARENA GIŻYCKO. BASE_COMMAND // ALL RIGHTS RESERVED.</p>

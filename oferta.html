@@ -9,8 +9,8 @@
 <body data-page="oferta">
 
   <!-- Glow Backgrounds -->
-  <div class="grid-glow"></div>
-  <div class="grid-glow-alt"></div>
+  <div class="bg-glow-orange"></div>
+  <div class="bg-glow-emerald"></div>
 
   <!-- Top Nav -->
   <nav class="top-nav">
@@ -208,89 +208,8 @@
       <span>Kontakt</span>
     </a>
   </nav>
-
-  <!-- Interactive JavaScript for Classes Customizer -->
-  <script>
-    const classes = {
-      assault: {
-        name: 'Szturmowiec',
-        role: 'Zrównoważony Atak // Karabinek Laserowy X-12',
-        desc: 'Uniwersalna klasa przeznaczona do walki na średnich dystansach. Wyposażona w karabinek o średniej sile ognia i dużej szybkostrzelności. Idealna do przejmowania punktów i dynamicznej ofensywy.',
-        fire: '80%',
-        range: '65%',
-        ammo: '75%',
-        hp: '100 HP'
-      },
-      sniper: {
-        name: 'Snajper',
-        role: 'Eliminacja Dystansowa // Karabin Laserowy L-99',
-        desc: 'Wysoka precyzja i ogromny zasięg kosztem mniejszej szybkostrzelności. Klasa doskonała dla graczy lubiących trzymać dystans, obserwować pole bitwy z wieży i likwidować cele z daleka.',
-        fire: '30%',
-        range: '100%',
-        ammo: '40%',
-        hp: '80 HP'
-      },
-      medic: {
-        name: 'Medyk / Support',
-        role: 'Leczenie i Odnowienie // Karabinek R-42 + Moduł Pola',
-        desc: 'Kluczowe wsparcie dla całego teamu. Medyk posiada zdolność zdalnego leczenia/przywracania punktów życia swoim sojusznikom na odległość. Niezastąpiony podczas długich operacji taktycznych.',
-        fire: '60%',
-        range: '50%',
-        ammo: '90%',
-        hp: '120 HP'
-      },
-      heavy: {
-        name: 'Ciężkie Wsparcie',
-        role: 'Obrona Sektora // CKM G-20 + Pancerna Kamizelka',
-        desc: 'Ogromna pula zdrowia (HP) i nieskończona amunicja w magazynku. Klasa powolna, ale idealna do zaporowej obrony baz i korytarzy, przyjmująca na siebie najwięcej ognia nieprzyjaciela.',
-        fire: '90%',
-        range: '45%',
-        ammo: '100%',
-        hp: '160 HP'
-      }
-    };
-
-    function selectClass(classKey, element) {
-      // Remove active classes
-      document.querySelectorAll('.class-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      
-      // Add active to current button
-      element.classList.add('active');
-      
-      // Update displays
-      const selected = classes[classKey];
-      document.getElementById('display-name').innerText = selected.name;
-      document.getElementById('display-role').innerText = selected.role;
-      document.getElementById('display-desc').innerText = selected.desc;
-      
-      document.getElementById('stat-fire').innerText = selected.fire;
-      document.getElementById('bar-fire').style.width = selected.fire;
-      
-      document.getElementById('stat-range').innerText = selected.range;
-      document.getElementById('bar-range').style.width = selected.range;
-      
-      document.getElementById('stat-ammo').innerText = selected.ammo;
-      document.getElementById('bar-ammo').style.width = selected.ammo;
-      
-      document.getElementById('stat-hp').innerText = selected.hp;
-      const hpVal = parseInt(selected.hp);
-      document.getElementById('bar-hp').style.width = (hpVal / 180 * 100) + '%';
-    }
-  </script>
-
-  <style>
-    .d-md-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width: 768px) {
-      .d-md-grid-2 {
-        grid-template-columns: 1fr 1.2fr;
-      }
-    }
-  </style>
+  <!-- Interactive JavaScript -->
+  <script src="assets/js/hud.js"></script>
 
   <footer>
     <p>&copy; 2026 LASER TAG TACTICAL ARENA GIŻYCKO. BASE_COMMAND // ALL RIGHTS RESERVED.</p>

@@ -9,8 +9,8 @@
 <body data-page="imprezy">
 
   <!-- Glow Backgrounds -->
-  <div class="grid-glow"></div>
-  <div class="grid-glow-alt"></div>
+  <div class="bg-glow-orange"></div>
+  <div class="bg-glow-emerald"></div>
 
   <!-- Top Nav -->
   <nav class="top-nav">
@@ -156,35 +156,8 @@
     </a>
   </nav>
 
-  <!-- Interactive JavaScript for Event Tabs -->
-  <script>
-    const events = {
-      birthdays: {
-        title: 'Urodziny Rekruta',
-        desc: 'Zorganizuj najbardziej dynamiczne urodziny dla swojego dziecka na Mazurach! Oferujemy bezpieczną, bezbolesną rozgrywkę laserową, która uczy strategicznego myślenia i współpracy w grupie. Dzieci bawią się pod stałą opieką doświadczonego instruktora, który koordynuje scenariusze i dba o zasady gry. <br><br> W cenie każdego pakietu znajduje się dostęp do dedykowanej sali urodzinowej, wojskowy briefing oraz pamiątkowe dyplomy dla każdego rekruta.'
-      },
-      corporate: {
-        title: 'Integracje Firmowe',
-        desc: 'Szukasz sposobu na zgranie zespołu lub podsumowanie udanego kwartału? Laser tag to idealny teambuilding. Przygotowujemy spersonalizowane turnieje taktyczne, które zmuszają do podziału ról, planowania i błyskawicznej komunikacji pod presją czasu. <br><br> Oferujemy pełną wyłączność na obiekt, profesjonalny system rankingowy z wydrukiem statystyk dla każdego pracownika oraz możliwość organizacji pełnego cateringu z gorącymi posiłkami i zimnymi napojami.'
-      },
-      bachelor: {
-        title: 'Wieczory Kawalerskie i Panieńskie',
-        desc: 'Ostatnie chwile wolności w militarnym stylu! Przeprowadzamy specjalne misje typu "Polowanie na VIP-a", gdzie przyszły Pan Młody lub Panna Młoda staje się głównym celem taktycznym nieprzyjaciela. <br><br> Gwarantujemy potężną dawkę adrenaliny, nielimitowany dostęp do areny, gęsty dym i muzykę bitewną dostosowaną do Waszych upodobań. Po walce możecie kontynuować integrację w naszej sali odpraw.'
-      }
-    };
-
-    function selectEvent(key, btnElement) {
-      document.querySelectorAll('.class-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      
-      btnElement.classList.add('active');
-      
-      const selected = events[key];
-      document.getElementById('event-title').innerHTML = selected.title;
-      document.getElementById('event-desc').innerHTML = selected.desc;
-    }
-  </script>
+  <!-- Interactive JavaScript -->
+  <script src="assets/js/hud.js"></script>
 
   <footer>
     <p>&copy; 2026 LASER TAG TACTICAL ARENA GIŻYCKO. BASE_COMMAND // ALL RIGHTS RESERVED.</p>

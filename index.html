@@ -9,8 +9,8 @@
 <body data-page="start">
 
   <!-- Glow Backgrounds -->
-  <div class="grid-glow"></div>
-  <div class="grid-glow-alt"></div>
+  <div class="bg-glow-orange"></div>
+  <div class="bg-glow-emerald"></div>
 
   <!-- Top Nav with Central Logo -->
   <nav class="top-nav">
@@ -120,7 +120,7 @@
     <section class="content-section" style="border-top: 1px solid var(--border-color); background: rgba(15, 17, 26, 0.4);">
       <div class="section-header">
         <span class="section-tag">SYSTEMY MAPOWANIA</span>
-        <h2 class="section-title">PLAN <span>TAKTYCZNY BASE_01</span></h2>
+        <h2 class="section-title">PLAN <span>TAKTYCZNY ARENY</span></h2>
         <div class="section-divider"></div>
       </div>
 
@@ -148,38 +148,37 @@
             
             <!-- Spawn Zones -->
             <circle cx="50" cy="175" r="30" fill="rgba(0, 229, 255, 0.05)" stroke="var(--accent-secondary)" stroke-width="1.5" />
-            <text x="50" y="180" font-family="Orbitron" font-size="8" fill="var(--accent-secondary)" text-anchor="middle">SPAWN A</text>
+            <text x="50" y="180" font-family="Orbitron" font-size="8" fill="var(--accent-secondary)" text-anchor="middle">BAZA A</text>
             
             <circle cx="450" cy="175" r="30" fill="rgba(255, 87, 34, 0.05)" stroke="var(--accent-primary)" stroke-width="1.5" />
-            <text x="450" y="180" font-family="Orbitron" font-size="8" fill="var(--accent-primary)" text-anchor="middle">SPAWN B</text>
+            <text x="450" y="180" font-family="Orbitron" font-size="8" fill="var(--accent-primary)" text-anchor="middle">BAZA B</text>
 
             <!-- Clickable Interactive Points -->
-            <g class="map-point" style="cursor: pointer;" onclick="selectZone('checkpoint-alfa', 'STREFA ALFA (BAZA ALFA)', 'Główny punkt kontrolny znajdujący się w centralnej części areny. Otoczony metalowymi osłonami, idealny do obrony i organizowania zasadzek na wrogie jednostki.')">
+            <g class="map-point" style="cursor: pointer;" onclick="selectZone('checkpoint-alfa', 'STREFA ALFA (PUNKT CENTRALNY)', 'Główny punkt kontrolny znajdujący się w centralnej części areny. Otoczony metalowymi osłonami, idealny do obrony i organizowania zasadzek.')">
               <circle cx="150" cy="120" r="12" fill="var(--accent-primary)" opacity="0.3" class="pulse-circle"/>
               <circle cx="150" cy="120" r="6" fill="var(--accent-primary)"/>
-              <text x="150" y="105" font-family="Orbitron" font-size="9" fill="#fff" text-anchor="middle">BASE_ALPHA</text>
+              <text x="150" y="105" font-family="Orbitron" font-size="9" fill="#fff" text-anchor="middle">STREFA ALFA</text>
             </g>
 
-            <g class="map-point" style="cursor: pointer;" onclick="selectZone('tower-bravo', 'WIEŻA OBSERWACYJNA (BRAVO)', 'Podwyższenie taktyczne zapewniające pełen podgląd na strefę centralną i korytarze Spawn B. Kluczowa pozycja dla graczy posługujących się karabinami snajperskimi.')">
+            <g class="map-point" style="cursor: pointer;" onclick="selectZone('tower-bravo', 'WIEŻA OBSERWACYJNA BRAVO', 'Podwyższenie taktyczne zapewniające pełen podgląd na strefę centralną i korytarze bazy B. Kluczowa pozycja dla graczy posługujących się karabinami snajperskimi.')">
               <circle cx="350" cy="120" r="12" fill="var(--accent-secondary)" opacity="0.3" class="pulse-circle"/>
               <circle cx="350" cy="120" r="6" fill="var(--accent-secondary)"/>
-              <text x="350" y="105" font-family="Orbitron" font-size="9" fill="#fff" text-anchor="middle">TOWER_BRAVO</text>
+              <text x="350" y="105" font-family="Orbitron" font-size="9" fill="#fff" text-anchor="middle">WIEŻA BRAVO</text>
             </g>
 
-            <g class="map-point" style="cursor: pointer;" onclick="selectZone('choke-point', 'KORYTARZ ŚMIERCI', 'Długi, prosty korytarz we wschodniej części areny o ograniczonej liczbie osłon taktycznych. Przejście tą strefą wymaga doskonałego wsparcia i osłony tarczy.')">
+            <g class="map-point" style="cursor: pointer;" onclick="selectZone('choke-point', 'KORYTARZ ŚMIERCI', 'Długi, prosty korytarz we wschodniej części areny o ograniczonej liczbie osłon. Przejście tą strefą wymaga doskonałego wsparcia i osłony tarczy.')">
               <circle cx="250" cy="230" r="12" fill="var(--accent-success)" opacity="0.3" class="pulse-circle"/>
               <circle cx="250" cy="230" r="6" fill="var(--accent-success)"/>
-              <text x="250" y="215" font-family="Orbitron" font-size="9" fill="#fff" text-anchor="middle">CHOKE_POINT</text>
+              <text x="250" y="215" font-family="Orbitron" font-size="9" fill="#fff" text-anchor="middle">KORYTARZ ŚMIERCI</text>
             </g>
           </svg>
         </div>
 
         <!-- Zone details text -->
         <div id="zone-details" class="hud-card" style="border-color: var(--accent-secondary);">
-          <div class="card-num">PLAN_SEC // INFO</div>
           <h3 class="card-title" id="zone-title" style="color: var(--accent-secondary);">Kliknij punkt na mapie</h3>
           <p class="card-desc" id="zone-desc" style="margin-top: 15px;">
-            Wybierz dowolny aktywny cel taktyczny na planie areny powyżej, aby przeanalizować charakterystykę terenu i zaplanować manewry bojowe.
+            Wybierz dowolny aktywny punkt na planie areny powyżej, aby zapoznać się z opisem strefy i zaplanować manewry.
           </p>
         </div>
       </div>
@@ -271,22 +270,7 @@
   </nav>
 
   <!-- Interactive JavaScript -->
-  <script>
-    function selectZone(id, title, desc) {
-      document.getElementById('zone-title').innerText = title;
-      document.getElementById('zone-desc').innerText = desc;
-      
-      // Update border color depending on zone
-      const card = document.getElementById('zone-details');
-      if (id === 'checkpoint-alfa') {
-        card.style.borderColor = 'var(--accent-primary)';
-      } else if (id === 'tower-bravo') {
-        card.style.borderColor = 'var(--accent-secondary)';
-      } else {
-        card.style.borderColor = 'var(--accent-success)';
-      }
-    }
-  </script>
+  <script src="assets/js/hud.js"></script>
 
   <!-- Pulse CSS Animations for Map -->
   <style>

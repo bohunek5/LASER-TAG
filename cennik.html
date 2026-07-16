@@ -9,8 +9,8 @@
 <body data-page="cennik">
 
   <!-- Glow Backgrounds -->
-  <div class="grid-glow"></div>
-  <div class="grid-glow-alt"></div>
+  <div class="bg-glow-orange"></div>
+  <div class="bg-glow-emerald"></div>
 
   <!-- Top Nav -->
   <nav class="top-nav">
@@ -233,7 +233,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 30px;">
-          <a href="kontakt.html" class="btn-hud btn-hud-orange" style="text-decoration:none; display:inline-block;">Rezerwuj termin z raportu</a>
+          <button id="trigger-booking-payment" class="btn-hud btn-hud-orange" style="border: none;">Rezerwuj i Opłać Misję</button>
         </div>
       </div>
     </section>
@@ -259,117 +259,8 @@
     </a>
   </nav>
 
-  <!-- Pricing Calculator Logic -->
-  <script>
-    let dayType = 'weekday'; // weekday or weekend
-    let modeType = 'indiv'; // indiv or bday
-    let bdayTier = '10'; // 10, 15, 20
-    let bdaySize = 'S'; // S, M, L
-
-    function selectDay(type, element) {
-      document.getElementById('day-weekday').classList.remove('active');
-      document.getElementById('day-weekend').classList.remove('active');
-      element.classList.add('active');
-      dayType = type;
-      updateCalculator();
-    }
-
-    function selectMode(mode, element) {
-      document.getElementById('mode-indiv').classList.remove('active');
-      document.getElementById('mode-bday').classList.remove('active');
-      element.classList.add('active');
-      modeType = mode;
-      
-      if (mode === 'indiv') {
-        document.getElementById('calc-group-players').style.display = 'block';
-        document.getElementById('calc-group-bday-options').style.display = 'none';
-      } else {
-        document.getElementById('calc-group-players').style.display = 'none';
-        document.getElementById('calc-group-bday-options').style.display = 'block';
-      }
-      updateCalculator();
-    }
-
-    function selectBdayTier(tier, element) {
-      document.getElementById('tier-10').classList.remove('active');
-      document.getElementById('tier-15').classList.remove('active');
-      document.getElementById('tier-20').classList.remove('active');
-      element.classList.add('active');
-      bdayTier = tier;
-      updateCalculator();
-    }
-
-    function selectBdaySize(size, element) {
-      document.getElementById('size-S').classList.remove('active');
-      document.getElementById('size-M').classList.remove('active');
-      document.getElementById('size-L').classList.remove('active');
-      element.classList.add('active');
-      bdaySize = size;
-      updateCalculator();
-    }
-
-    function updateCalculator() {
-      let price = 0;
-      
-      if (modeType === 'indiv') {
-        const players = parseInt(document.getElementById('players-range').value);
-        document.getElementById('players-val').innerText = players;
-        
-        if (dayType === 'weekday') {
-          // Pon-Czw Individual Rates
-          if (players <= 6) {
-            price = players * 50;
-          } else if (players <= 10) {
-            price = players * 45;
-          } else {
-            price = players * 40;
-          }
-        } else {
-          // Pt-Ndz Individual Rates
-          if (players <= 6) {
-            price = players * 60;
-          } else if (players <= 10) {
-            price = players * 55;
-          } else {
-            price = players * 50;
-          }
-        }
-      } else {
-        // Birthday Packages Rates
-        // Matrix: [dayType][bdayTier][bdaySize]
-        const rates = {
-          weekday: {
-            '10': { S: 550, M: 600, L: 650 },
-            '15': { S: 750, M: 800, L: 850 },
-            '20': { S: 850, M: 900, L: 950 }
-          },
-          weekend: {
-            '10': { S: 650, M: 700, L: 750 },
-            '15': { S: 850, M: 900, L: 950 },
-            '20': { S: 950, M: 1000, L: 1050 }
-          }
-        };
-        price = rates[dayType][bdayTier][bdaySize];
-      }
-      
-      document.getElementById('total-price').innerText = price;
-    }
-
-    // Initial run
-    updateCalculator();
-  </script>
-
-  <style>
-    .d-md-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width: 768px) {
-      .d-md-grid-2 {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-  </style>
+  <!-- Interactive JavaScript -->
+  <script src="assets/js/hud.js"></script>
 
   <footer>
     <p>&copy; 2026 LASER TAG TACTICAL ARENA GIŻYCKO. BASE_COMMAND // ALL RIGHTS RESERVED.</p>
